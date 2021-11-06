@@ -14,45 +14,39 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>VOCALS: 1 IF PER CADA VOCAL</title>
-  </head>
+    <title>CALCULADORA 1</title>
+    <script type="text/javascript" src="js/utilitats.js"></script>
+</head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>VOCALS: 1 IF PER CADA VOCAL</h1>
+        <h1>CALCULADORA 1</h1>
       </div>
     </nav>
 
     <div class="container">
       <div class="row">
         <script type="text/JavaScript">
-            
-            document.write("<h2>ABECEDARI</h2>"); 
-                for (let index = 65; index <= 90; index++) {
-                    const lletra = String.fromCharCode(index);
-                    document.write("<p>" + lletra + " - ");
-                    if (lletra=="A"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="E"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="I"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="O"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="U"){
-                        document.write("VOCAL");
-                    } else {
-                        document.write("CONSONANT");
-                    }
-                    document.write("</p>");
-                }
+
+            var a = prompt("Introdueix el primer numero (a)?");
+            a = parseFloat(a);
+            console.log(typeof a);
+            document.write("<p>A = " + a + "</p>");
+            var b = prompt("Introdueix el segon numero (b)?");
+            b = parseFloat(b);
+            console.log(typeof a);
+            document.write("<p>B = " + b + "</p>");
+            document.write("<h3>SUMA (A + B) = " + suma(a,b) + "</h3>");
+            document.write("<h3>RESTA (A - B) = " + resta(a,b) + "</h3>");
+            document.write("<h3>PRODUCTE (A * B) = " + producte(a,b) + "</h3>");
+            document.write("<h3>DIVISIÓ (A / B) = " + divisio(a,b) + "</h3>");
+            document.write("<h3>POTENCIA (A ^ B) = " + potencia(a,b) + "</h3>");
 
         </script>
-        <a href="index.html">Tornar</a>
+      </div>
+
+      <div id="boto_tornar" class="d-grid gap-2 d-md-block">
+            <button type="button" class="btn btn-success" onclick="window.location.href='index.html'">TORNAR</button>
       </div>
     </div>
 

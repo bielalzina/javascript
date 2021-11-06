@@ -14,12 +14,12 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>VOCALS: 1 IF PER CADA VOCAL</title>
+    <title>VOCALS: 1 ÚNIC IF</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>VOCALS: 1 IF PER CADA VOCAL</h1>
+        <h1>VOCALS: 1 ÚNIC IF</h1>
       </div>
     </nav>
 
@@ -31,19 +31,7 @@
                 for (let index = 65; index <= 90; index++) {
                     const lletra = String.fromCharCode(index);
                     document.write("<p>" + lletra + " - ");
-                    if (lletra=="A"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="E"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="I"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="O"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="U"){
+                    if (lletra=="A" || lletra=="E" || lletra=="I" || lletra=="O" || lletra=="U"){
                         document.write("VOCAL");
                     } else {
                         document.write("CONSONANT");

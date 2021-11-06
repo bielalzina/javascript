@@ -14,43 +14,49 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>VOCALS: 1 IF PER CADA VOCAL</title>
-  </head>
+    <title>FACTORIAL</title>
+    <script>
+        function factorial (numero){
+            let resultat=1;
+            for (let index=1;index<=numero;index++){
+                resultat=resultat*index;
+            }
+            return resultat;
+        }
+
+        function factorialRec (numero){
+            if (numero<=2){
+                return numero;
+            } else {
+                return (numero * factorialRec(numero-1));
+            }
+        }
+
+    </script>
+    
+
+    </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>VOCALS: 1 IF PER CADA VOCAL</h1>
+        <h1>FACTORIAL</h1>
       </div>
     </nav>
 
     <div class="container">
       <div class="row">
         <script type="text/JavaScript">
-            
-            document.write("<h2>ABECEDARI</h2>"); 
-                for (let index = 65; index <= 90; index++) {
-                    const lletra = String.fromCharCode(index);
-                    document.write("<p>" + lletra + " - ");
-                    if (lletra=="A"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="E"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="I"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="O"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="U"){
-                        document.write("VOCAL");
-                    } else {
-                        document.write("CONSONANT");
-                    }
-                    document.write("</p>");
-                }
+          
+            let a = prompt("Introdueix un numero per calcular el seu factorial?");
+            a = parseInt(a);
+            document.write("<p>NUMERO INTRODUÏT = " + a + "</p>");
 
+            if (a>=0){
+                document.write("<h2>EL FACTORIAL DE " + a + " ÉS: " + factorial(a) + "</h2>");
+                document.write("<h2>EL FACTORIAL DE " + a + " CALCULAT RECURSIVAMENT ÉS: " + factorialRec(a) + "</h2>");
+            } else {
+                document.write("<h2>CAL INTRODUIR UN NUMERO SUPERIOR O IGUAL A 0</h2>");
+            }
         </script>
         <a href="index.html">Tornar</a>
       </div>

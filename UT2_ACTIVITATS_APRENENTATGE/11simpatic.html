@@ -14,46 +14,45 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>VOCALS: 1 IF PER CADA VOCAL</title>
-  </head>
+    <title>SIMPATIC</title>
+    <script>
+        function saluda (nom){
+            alert("Benvingut "+ nom + "!!!");
+        return resultat;
+        }
+        
+        window.onload=function (){
+            document.getElementById("boto").onclick=function(){saluda(nom)};
+        }
+
+
+    </script>
+    
+
+    </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>VOCALS: 1 IF PER CADA VOCAL</h1>
+        <h1>SIMPATIC</h1>
       </div>
     </nav>
 
     <div class="container">
       <div class="row">
         <script type="text/JavaScript">
-            
-            document.write("<h2>ABECEDARI</h2>"); 
-                for (let index = 65; index <= 90; index++) {
-                    const lletra = String.fromCharCode(index);
-                    document.write("<p>" + lletra + " - ");
-                    if (lletra=="A"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="E"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="I"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="O"){
-                        document.write("VOCAL");
-                    }
-                    else if (lletra=="U"){
-                        document.write("VOCAL");
-                    } else {
-                        document.write("CONSONANT");
-                    }
-                    document.write("</p>");
-                }
-
+            let nom = prompt("Introdueix el teu nom:");
         </script>
-        <a href="index.html">Tornar</a>
+        
+        
+       
       </div>
+      <div class="d-grid gap-2 d-md-block">
+            <button id="boto" type="button" class="btn btn-primary">PITJA'M</button>
+        </div>
+        
+        <div id="boto_tornar" class="d-grid gap-2 d-md-block">
+            <button type="button" class="btn btn-success" onclick="window.location.href='index.html'">TORNAR</button>
+        </div>
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
