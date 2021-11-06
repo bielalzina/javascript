@@ -14,31 +14,48 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>MAJOR DE 2 NUMEROS</title>
+    <title>WHILE</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>MAJOR DE 2 NUMEROS</h1>
+        <h1>WHILE</h1>
       </div>
     </nav>
 
     <div class="container">
       <div class="row">
         <script type="text/JavaScript">
-            let a = prompt("Introdueix el primer numero (a)?");
+          
+            let a = prompt("Introdueix el primer numero (INICI)?");
             a = parseInt(a);
-            document.write("<p>a = " + a + "</p>");
-            let b = prompt("Introdueix el segon numero (b)?");
-            b = parseInt(b);
-            document.write("<p>b = " + b + "</p>");
-            if (a > b){
-                document.write("<p>El major és a</p>");
-            } else if (b > a) {
-                document.write("<p>El major és b</p>");
+            
+            let b = prompt("Introdueix el darrer numero (FI)?");
+            b=parseInt(b);
+            
+            document.write("<h2>NUMEROS INTRODUÏTS</h2>");
+            document.write("<p>LIMIT INFERIOR = " + a + "</p>");
+            document.write("<p>LIMIT SUPERIOR = " + b + "</p>");
+            
+            if (a<=b) {
+                
+                document.write("<hr>");
+                document.write("<h2>SUCCESSIÓ DE NUMEROS</h2>"); 
+                var recorregut=b-a+1;
+                for (let index = 1; index <= recorregut; index++) {
+                    document.write("<p>" + index + ") " + a + "</p>");
+                   
+                    a++;
+                    
+                }
+                
+
             } else {
-                document.write("<p>a i b son iguals</p>");
+                document.write("<h2>PER MOSTRAR LA SUCCESSIÓ, CAL QUE EL LIMIT INFERIOR SIGUI MÉS PETIT QUE EL LIMIT SUPERIOR</h2>");
             }
+
+
+
         </script>
         <a href="index.html">Tornar</a>
       </div>

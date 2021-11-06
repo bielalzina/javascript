@@ -14,31 +14,44 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>MAJOR DE 2 NUMEROS</title>
+    <title>VOCALS 1 ÚNIC IF</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>MAJOR DE 2 NUMEROS</h1>
+        <h1>VOCALS 1 ÚNIC IF</h1>
       </div>
     </nav>
 
     <div class="container">
       <div class="row">
         <script type="text/JavaScript">
-            let a = prompt("Introdueix el primer numero (a)?");
-            a = parseInt(a);
-            document.write("<p>a = " + a + "</p>");
-            let b = prompt("Introdueix el segon numero (b)?");
-            b = parseInt(b);
-            document.write("<p>b = " + b + "</p>");
-            if (a > b){
-                document.write("<p>El major és a</p>");
-            } else if (b > a) {
-                document.write("<p>El major és b</p>");
-            } else {
-                document.write("<p>a i b son iguals</p>");
-            }
+            
+            document.write("<h2>ABECEDARI</h2>"); 
+                for (let index = 65; index <= 90; index++) {
+                    const lletra = String.fromCharCode(index);
+                    document.write("<p>" + lletra + " - ");
+                    if (lletra=="A"){
+                        document.write("VOCAL");
+                    }
+                    else if (lletra=="E"){
+                        document.write("VOCAL");
+                    }
+                    else if (lletra=="I"){
+                        document.write("VOCAL");
+                    }
+                    else if (lletra=="O"){
+                        document.write("VOCAL");
+                    }
+                    else if (lletra=="U"){
+                        document.write("VOCAL");
+                    } else {
+                        document.write("CONSONANT");
+                    }
+                    document.write("</p>");
+
+                }
+
         </script>
         <a href="index.html">Tornar</a>
       </div>
