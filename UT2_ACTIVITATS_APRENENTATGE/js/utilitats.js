@@ -1,3 +1,8 @@
+const idash3 = "<div class=\"alert alert-success\" role=\"alert\"><h3>";
+const fdash3 = "</h3></div>";
+
+const idadh3 = "<div class=\"alert alert-danger\" role=\"alert\"><h3>";
+const fdadh3 = "</h3></div>";
 
 function suma(num1, num2) {
     if (typeof num1 !== 'number' || typeof num2 !== 'number') {
@@ -143,3 +148,141 @@ function validaTelefonMobil(telefon, tipus) {
     }
     return false;
 }
+
+function validaTelefonFix(telefon, tipus) {
+    if (validaObligatori(telefon) && !isNaN(telefon)) {
+        if (validaSencer(telefon) && (telefon.length === 9)) {
+            if (tipus === "F" && ((telefon.charAt(0) === "9") || (telefon.charAt(0) === "8"))) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+/**
+ * Valida que la cadena de text que rep com a paràmetre contengui una data, amb els camps separats per /
+
+ * @param data La cadena de text amb la data
+ * @returns {Boolean} true si és una data correcte, false si no.
+ *  */
+
+
+function validaData(data) {
+    
+    // Dividim data en parts
+    let parts = data.split("/");
+    // parts ha de tenir 3 elements
+    if (parts.length !== 3) {
+        return false;
+    }
+
+    // Totes les parts han de ser numeros sencers
+    if (!validaSencer(parts[0]) || !validaSencer(parts[1]) || !validaSencer(parts[2])) {
+        return false;
+    }
+
+    //Mes correcte
+    if (parts[1] < 1 || parts[1] > 12) {
+        return false;
+    }
+
+    //Any correcte
+    if (parts[2] < 1) {
+        return false;
+    }
+
+    //Dia correcte
+    if (parts[0] < 1 || parts[0] > validaDiaDelMes(parts[1], parts[2])) {
+        return false;
+    }
+
+    return true;
+}
+
+/** Calcula els dies que té un mes d'un any concret, tenint en compte els anys de traspàs.
+ *
+ * @param  mes El mes, d'1 a 12
+ * @param any L'any complet
+ * @returns Els dies que té el mes demanat.
+ */
+
+
+function validaDiaDelMes(mes, any) {
+    let dia = -1;
+    mes = parseInt(mes);
+    any = parseInt(any);
+
+    switch (mes) {
+
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12: {
+            dia = 31;
+            break;
+        }
+            
+        case 4:
+        case 6:
+        case 9:
+        case 11: {
+            dia = 30;
+            break;
+        }
+            
+        case 2: {
+            if ((any % 4 === 0) && ((any % 100 !== 0) || (any % 400 === 0))) {
+                dia = 29;
+            } else {
+                dia = 28;
+            }
+
+            break;
+        }
+    }
+    return dia;
+}
+
+/**
+ * Valida que el paràmetre que rep contengui un NIF vàlid.
+
+ * @param nif Cadena de text amb el nif complet
+ * @returns {Boolean}  true si es vàlid, false si no ho és.
+ * */
+function validarNIFo(nif) {
+    let cadena = 'TRWAGMYFPDXBNJZSQVHLCKET';
+    if (!validarObligatori(nif) || nif.length !== 9) {
+        return false;
+    }
+    let lletra = nif.charAt(8);
+    let numero = parseInt(nif.substring(0, 8));
+    let modul = numero % 23;
+    if (lletra !== cadena[modul]) {
+        return false;
+    }
+    return true;
+}
+
+function validaNIF(nif) {
+    // El NIF introduït ha de tenir una longitud = 9
+    if (nif.length !== 9) {
+        return false;
+    }
+
+    let cadena = "TRWAGMYFPDXBNJZSQVHLCKET";
+    
+    let lletra = nif.charAt(8);
+
+    let numero = parseInt(nif.substring(0, 8));
+    
+
+
+    return true;
+
+}
+

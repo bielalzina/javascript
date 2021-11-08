@@ -14,13 +14,13 @@
     />
     <link rel="stylesheet" href="css/estil.css" />
     <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>VALIDA TELEFON</title>
+    <title>VALIDA NIF</title>
     <script type="text/javascript" src="js/utilitats.js"></script>
 </head>
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <div class="container">
-        <h1>VALIDA TELEFON</h1>
+        <h1>VALIDA NIF</h1>
       </div>
     </nav>
 
@@ -28,30 +28,27 @@
       <div class="row">
         <script type="text/JavaScript">
 
-            let telefon = prompt("INTRODUEIX NUMERO DE TELEFON:");
-            
-            if (validaTelefonMobil(telefon, "M")){
-              document.write(idash3);
-              document.write("EL TELEFON NUMERO " + telefon + " CORRESPON A UNA LINIA MÒBIL");
-              document.write(fdash3);
-                          
-            } else {
-              document.write(idadh3);
-              document.write("EL TELEFON NUMERO " + telefon + " NO CORRESPON A UNA LINIA MÒBIL");
-              document.write(fdash3);
-            }
-            
-            if (validaTelefonFix(telefon, "F")){
-              document.write(idash3);
-              document.write("EL TELEFON NUMERO " + telefon + " CORRESPON A UNA LINIA FIXA");
-              document.write(fdash3);
-                          
-            } else {
-              document.write(idadh3);
-              document.write("EL TELEFON NUMERO " + telefon + " NO CORRESPON A UNA LINIA FIXA");
-              document.write(fdash3);
-            }
-            
+            var valorOK=false;
+            do {
+                let nif = prompt("INTRODUEIX UN NIF VÀLID DE 8 XIFRES I 1 LLETRA (com per exemple: 78207737D):");
+                if (validaObligatori(nif)){
+                    if (validaNIF(nif)){
+                        document.write(idash3); 
+                        document.write("EL DNI INTRODUÏT - <b>" + nif + "</b> - ÉS CORRECTE");
+                        document.write(fdash3);
+                        valorOK=true;
+                  } else {
+                        document.write(idadh3); 
+                        document.write("EL DNI INTRODUÏT - <b>" + nif + "</b> - NO ÉS CORRECTE");
+                        document.write(fdadh3);
+                        valorOK=true;
+                  }
+                } else {
+                    alert("HAS D'INTRODUIR UN DNI. TORNAM A COMENÇAR");
+                }
+            } while (!valorOK);
+ 
+
         </script>
       </div>
 
