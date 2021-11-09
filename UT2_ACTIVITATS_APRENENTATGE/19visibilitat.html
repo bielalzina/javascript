@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/estil.css" />
+		<link rel="icon" type="image/ico" href="imatges/favicon.ico" />
+		<title>VISIBILITAT</title>
+		<script type="text/javascript" src="js/utilitats.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-dark bg-primary">
+			<div class="container">
+				<h1>VISIBILITAT</h1>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<h2>PRIMER GUIÓ</h2>
+				<script type="text/JavaScript">
+					var primera ="primera";
+					segona="segona";
+					function prova() {
+						var tercera="tercera";
+						quarta="quarta";
+						if(true){
+							sisena = "sisena";
+							var cinquena="cinquena";
+
+						}
+						document.write("<p>Dins funció (primera): " + primera + "</p>");
+						document.write("<p>Dins funció (segona): " + segona + "</p>");
+						document.write("<p>Dins funció (tercera): " + tercera + "</p>");
+						document.write("<p>Dins funció (quarta): " + quarta + "</p>");
+						document.write("<p>Dins funció (cinquena): " + cinquena + "</p>");
+						document.write("<p>Dins funció (sisena): " + sisena + "</p>");
+					}
+					prova();
+					document.write("<hr>");
+
+					if (typeof primera != "undefined"){
+						document.write("<p>Dins PRIMER guió (primera): " + primera + "</p>");
+					} else {
+						document.write("<p>Primera UNDEFINED</p>");
+					}
+
+					if (typeof segona != "undefined"){
+						document.write("<p>Dins PRIMER guió (segona): " + segona + "</p>");
+					} else {
+						document.write("<p>Segona UNDEFINED</p>");
+					}
+
+					if (typeof tercera != "undefined"){
+						document.write("<p>Dins PRIMER guió (tercera): " + tercera + "</p>");
+					} else {
+						document.write("<p>Tercera UNDEFINED</p>");
+					}
+
+					if (typeof quarta != "undefined"){
+						document.write("<p>Dins PRIMER guió (quarta): " + quarta + "</p>");
+					} else {
+						document.write("<p>Quarta UNDEFINED</p>");
+					}
+
+					if (typeof cinquena != "undefined"){
+						document.write("<p>Dins PRIMER guió (cinquena): " + cinquena + "</p>");
+					} else {
+						document.write("<p>Cinquena UNDEFINED</p>");
+					}
+
+					if (typeof sisena != "undefined"){
+						document.write("<p>Dins PRIMER guió (sisena): " + sisena + "</p>");
+					} else {
+						document.write("<p>Sisena UNDEFINED</p>");
+					}
+				</script>
+			</div>
+			<div class="row">
+				<h2>SEGON GUIÓ</h2>
+				<script type="text/JavaScript">
+					if (typeof primera != "undefined"){
+						document.write("<p>Dins SEGON guió (primera): " + primera + "</p>");
+					} else {
+						document.write("<p>Primera UNDEFINED</p>");
+					}
+
+					if (typeof segona != "undefined"){
+						document.write("<p>Dins SEGON guió (segona): " + segona + "</p>");
+					} else {
+						document.write("<p>Segona UNDEFINED</p>");
+					}
+
+					if (typeof tercera != "undefined"){
+						document.write("<p>Dins SEGON guió (tercera): " + tercera + "</p>");
+					} else {
+						document.write("<p>Tercera UNDEFINED</p>");
+					}
+
+					if (typeof quarta != "undefined"){
+						document.write("<p>Dins SEGON guió (quarta): " + quarta + "</p>");
+					} else {
+						document.write("<p>Quarta UNDEFINED</p>");
+					}
+
+					if (typeof cinquena != "undefined"){
+						document.write("<p>Dins SEGON guió (cinquena): " + cinquena + "</p>");
+					} else {
+						document.write("<p>Cinquena UNDEFINED</p>");
+					}
+
+					if (typeof sisena != "undefined"){
+						document.write("<p>Dins SEGON guió (sisena): " + sisena + "</p>");
+					} else {
+						document.write("<p>Sisena UNDEFINED</p>");
+					}
+				</script>
+			</div>
+
+			<div id="boto_tornar" class="d-grid gap-2 d-md-block">
+				<button
+					type="button"
+					class="btn btn-success"
+					onclick="window.location.href='index.html'"
+				>
+					TORNAR
+				</button>
+			</div>
+		</div>
+
+		<!-- Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

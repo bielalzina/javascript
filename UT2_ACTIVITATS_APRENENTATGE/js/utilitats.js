@@ -1,42 +1,42 @@
-const idash3 = "<div class=\"alert alert-success\" role=\"alert\"><h3>";
-const fdash3 = "</h3></div>";
+const idash3 = '<div class="alert alert-success" role="alert"><h3>';
+const fdash3 = '</h3></div>';
 
-const idadh3 = "<div class=\"alert alert-danger\" role=\"alert\"><h3>";
-const fdadh3 = "</h3></div>";
+const idadh3 = '<div class="alert alert-danger" role="alert"><h3>';
+const fdadh3 = '</h3></div>';
 
 function suma(num1, num2) {
-    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        return null;
-    }
-    return (num1 + num2);
+	if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+		return null;
+	}
+	return num1 + num2;
 }
 
 function resta(num1, num2) {
-    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        return null;
-    }
-    return (num1 - num2);
+	if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+		return null;
+	}
+	return num1 - num2;
 }
 
 function producte(num1, num2) {
-    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        return null;
-    }
-    return (num1 * num2);
+	if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+		return null;
+	}
+	return num1 * num2;
 }
 
 function divisio(num1, num2) {
-    if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        return null;
-    }
-    return (num1 / num2);
+	if (typeof num1 !== 'number' || typeof num2 !== 'number') {
+		return null;
+	}
+	return num1 / num2;
 }
 
 function potencia(base, expo) {
-    if (typeof base !== 'number' || typeof expo !== 'number') {
-        return null;
-    }
-    return Math.pow(base,expo);
+	if (typeof base !== 'number' || typeof expo !== 'number') {
+		return null;
+	}
+	return Math.pow(base, expo);
 }
 
 /**Comprova que el paràmetre sigui numèric i de tipus "sencer".
@@ -48,13 +48,12 @@ function potencia(base, expo) {
  */
 
 function validaSencer(numero) {
-    if (!isNaN(numero) && (numero % 1 === 0)) {
-        return true;
-     } else {
-         return false;
-     }
+	if (!isNaN(numero) && numero % 1 === 0) {
+		return true;
+	} else {
+		return false;
+	}
 }
-
 
 /**Comprova que el paràmetre sigui numèric i de tipus "real".
  * Comprova que contengui dades, que siguin numèriques i que el reste de la
@@ -64,13 +63,12 @@ function validaSencer(numero) {
  * @returns true si és un valor decimal
  */
 
-
 function validaDecimal(numero) {
-    if (!isNaN(numero) && (numero % 1 !== 0)) {
-        return true
-    } else {
-        return false;
-    }
+	if (!isNaN(numero) && numero % 1 !== 0) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 /** Demana a l'usuari un nombre sencer. Mostra el missatge a l'alert per informar
@@ -80,13 +78,12 @@ function validaDecimal(numero) {
  * @returns un valor sencer
  */
 
-
 function llegeixSencer(missatge) {
-    let numero;
-    do {
-        numero = prompt(missatge);
-    } while (!validaSencer(numero));
-    return parseInt(numero);
+	let numero;
+	do {
+		numero = prompt(missatge);
+	} while (!validaSencer(numero));
+	return parseInt(numero);
 }
 
 /**
@@ -101,17 +98,16 @@ function llegeixSencer(missatge) {
  * @param {type} valor El valor que comprovam
  * @returns {Boolean} true si conte dades, false en cas contrari*/
 
-
 function validaObligatori(valor) {
-    if (valor !== null & valor !== 'undefined') {
-        // Convertim valor a cadena i eliminam espais en blanc al principi i al final
-        // Evitam que un usuari només introdueixi espais
-        valor = valor.toString().trim()
-        if (valor.length > 0) {
-            return true;
-        }
-    }
-    return false;
+	if ((valor !== null) & (valor !== 'undefined')) {
+		// Convertim valor a cadena i eliminam espais en blanc al principi i al final
+		// Evitam que un usuari només introdueixi espais
+		valor = valor.toString().trim();
+		if (valor.length > 0) {
+			return true;
+		}
+	}
+	return false;
 }
 
 /** Comprova que el paràmetre telefon contengui un telèfon espanyol vàlid.
@@ -122,44 +118,53 @@ function validaObligatori(valor) {
  * @returns true si el telèfon és correcte.
  */
 function validarTelefon(telefon, tipus) {
-    if (validarObligatori(telefon) && !isNaN(telefon)) {
-        telefon = telefon + "";
-        if (validarSencer(telefon) && (telefon.length === 9)) {
-            if (((telefon.charAt(0) === "6") || (telefon.charAt(0) === "7"))
-                && ((typeof tipus === 'undefined') || (tipus === 0))) {
-                return true;
-            }
-            if (((telefon.charAt(0) === "8") || (telefon.charAt(0) === "9"))
-                && ((typeof tipus === 'undefined') || (tipus === 1))) {
-                return true;
-            }
-        }
-    }
-    return false;
+	if (validarObligatori(telefon) && !isNaN(telefon)) {
+		telefon = telefon + '';
+		if (validarSencer(telefon) && telefon.length === 9) {
+			if (
+				(telefon.charAt(0) === '6' || telefon.charAt(0) === '7') &&
+				(typeof tipus === 'undefined' || tipus === 0)
+			) {
+				return true;
+			}
+			if (
+				(telefon.charAt(0) === '8' || telefon.charAt(0) === '9') &&
+				(typeof tipus === 'undefined' || tipus === 1)
+			) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 function validaTelefonMobil(telefon, tipus) {
-    if (validaObligatori(telefon) && !isNaN(telefon)) {
-        if (validaSencer(telefon) && (telefon.length === 9)) {
-            if (tipus === "M" && ((telefon.charAt(0) === "6") || (telefon.charAt(0) === "7"))) {
-                return true;
-            }
-        }
-    }
-    return false;
+	if (validaObligatori(telefon) && !isNaN(telefon)) {
+		if (validaSencer(telefon) && telefon.length === 9) {
+			if (
+				tipus === 'M' &&
+				(telefon.charAt(0) === '6' || telefon.charAt(0) === '7')
+			) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 function validaTelefonFix(telefon, tipus) {
-    if (validaObligatori(telefon) && !isNaN(telefon)) {
-        if (validaSencer(telefon) && (telefon.length === 9)) {
-            if (tipus === "F" && ((telefon.charAt(0) === "9") || (telefon.charAt(0) === "8"))) {
-                return true;
-            }
-        }
-    }
-    return false;
+	if (validaObligatori(telefon) && !isNaN(telefon)) {
+		if (validaSencer(telefon) && telefon.length === 9) {
+			if (
+				tipus === 'F' &&
+				(telefon.charAt(0) === '9' || telefon.charAt(0) === '8')
+			) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
-
 
 /**
  * Valida que la cadena de text que rep com a paràmetre contengui una data, amb els camps separats per /
@@ -168,37 +173,39 @@ function validaTelefonFix(telefon, tipus) {
  * @returns {Boolean} true si és una data correcte, false si no.
  *  */
 
-
 function validaData(data) {
-    
-    // Dividim data en parts
-    let parts = data.split("/");
-    // parts ha de tenir 3 elements
-    if (parts.length !== 3) {
-        return false;
-    }
+	// Dividim data en parts
+	let parts = data.split('/');
+	// parts ha de tenir 3 elements
+	if (parts.length !== 3) {
+		return false;
+	}
 
-    // Totes les parts han de ser numeros sencers
-    if (!validaSencer(parts[0]) || !validaSencer(parts[1]) || !validaSencer(parts[2])) {
-        return false;
-    }
+	// Totes les parts han de ser numeros sencers
+	if (
+		!validaSencer(parts[0]) ||
+		!validaSencer(parts[1]) ||
+		!validaSencer(parts[2])
+	) {
+		return false;
+	}
 
-    //Mes correcte
-    if (parts[1] < 1 || parts[1] > 12) {
-        return false;
-    }
+	//Mes correcte
+	if (parts[1] < 1 || parts[1] > 12) {
+		return false;
+	}
 
-    //Any correcte
-    if (parts[2] < 1) {
-        return false;
-    }
+	//Any correcte
+	if (parts[2] < 1) {
+		return false;
+	}
 
-    //Dia correcte
-    if (parts[0] < 1 || parts[0] > validaDiaDelMes(parts[1], parts[2])) {
-        return false;
-    }
+	//Dia correcte
+	if (parts[0] < 1 || parts[0] > validaDiaDelMes(parts[1], parts[2])) {
+		return false;
+	}
 
-    return true;
+	return true;
 }
 
 /** Calcula els dies que té un mes d'un any concret, tenint en compte els anys de traspàs.
@@ -208,44 +215,42 @@ function validaData(data) {
  * @returns Els dies que té el mes demanat.
  */
 
-
 function validaDiaDelMes(mes, any) {
-    let dia = -1;
-    mes = parseInt(mes);
-    any = parseInt(any);
+	let dia = -1;
+	mes = parseInt(mes);
+	any = parseInt(any);
 
-    switch (mes) {
+	switch (mes) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12: {
+			dia = 31;
+			break;
+		}
 
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12: {
-            dia = 31;
-            break;
-        }
-            
-        case 4:
-        case 6:
-        case 9:
-        case 11: {
-            dia = 30;
-            break;
-        }
-            
-        case 2: {
-            if ((any % 4 === 0) && ((any % 100 !== 0) || (any % 400 === 0))) {
-                dia = 29;
-            } else {
-                dia = 28;
-            }
+		case 4:
+		case 6:
+		case 9:
+		case 11: {
+			dia = 30;
+			break;
+		}
 
-            break;
-        }
-    }
-    return dia;
+		case 2: {
+			if (any % 4 === 0 && (any % 100 !== 0 || any % 400 === 0)) {
+				dia = 29;
+			} else {
+				dia = 28;
+			}
+
+			break;
+		}
+	}
+	return dia;
 }
 
 /**
@@ -255,34 +260,39 @@ function validaDiaDelMes(mes, any) {
  * @returns {Boolean}  true si es vàlid, false si no ho és.
  * */
 function validarNIFo(nif) {
-    let cadena = 'TRWAGMYFPDXBNJZSQVHLCKET';
-    if (!validarObligatori(nif) || nif.length !== 9) {
-        return false;
-    }
-    let lletra = nif.charAt(8);
-    let numero = parseInt(nif.substring(0, 8));
-    let modul = numero % 23;
-    if (lletra !== cadena[modul]) {
-        return false;
-    }
-    return true;
+	let cadena = 'TRWAGMYFPDXBNJZSQVHLCKET';
+	if (!validarObligatori(nif) || nif.length !== 9) {
+		return false;
+	}
+	let lletra = nif.charAt(8);
+	let numero = parseInt(nif.substring(0, 8));
+	let modul = numero % 23;
+	if (lletra !== cadena[modul]) {
+		return false;
+	}
+	return true;
 }
 
 function validaNIF(nif) {
-    // El NIF introduït ha de tenir una longitud = 9
-    if (nif.length !== 9) {
-        return false;
-    }
+	// El NIF introduït ha de tenir una longitud = 9
+	if (nif.length !== 9) {
+		return false;
+	}
 
-    let cadena = "TRWAGMYFPDXBNJZSQVHLCKET";
-    
-    let lletra = nif.charAt(8);
+	let cadena = 'TRWAGMYFPDXBNJZSQVHLCKET';
 
-    let numero = parseInt(nif.substring(0, 8));
-    
+	// Desam lletra
+	let lletra = nif.charAt(8);
 
+	// Desam digits
+	let numero = parseInt(nif.substring(0, 8));
 
-    return true;
+	// Calculam index
+	let index = numero % 23;
 
+	if (lletra !== cadena[index]) {
+		return false;
+	}
+
+	return true;
 }
-

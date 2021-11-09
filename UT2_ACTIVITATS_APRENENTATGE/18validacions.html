@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/estil.css" />
-    <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
-    <title>VALIDA NIF</title>
-    <script type="text/javascript" src="js/utilitats.js"></script>
-</head>
-  <body>
-    <nav class="navbar navbar-dark bg-primary">
-      <div class="container">
-        <h1>VALIDA NIF</h1>
-      </div>
-    </nav>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/estil.css" />
+		<link rel="icon" type="image/ico" href="imatges/favicon.ico" />
+		<title>VALIDA NIF</title>
+		<script type="text/javascript" src="js/utilitats.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-dark bg-primary">
+			<div class="container">
+				<h1>VALIDA NIF</h1>
+			</div>
+		</nav>
 
-    <div class="container">
-      <div class="row">
-        <script type="text/JavaScript">
+		<div class="container">
+			<div class="row">
+				<script type="text/JavaScript">
 
-            var valorOK=false;
-            do {
-                let nif = prompt("INTRODUEIX UN NIF VÀLID DE 8 XIFRES I 1 LLETRA (com per exemple: 78207737D):");
-                if (validaObligatori(nif)){
-                    if (validaNIF(nif)){
-                        document.write(idash3); 
-                        document.write("EL DNI INTRODUÏT - <b>" + nif + "</b> - ÉS CORRECTE");
-                        document.write(fdash3);
-                        valorOK=true;
-                  } else {
-                        document.write(idadh3); 
-                        document.write("EL DNI INTRODUÏT - <b>" + nif + "</b> - NO ÉS CORRECTE");
-                        document.write(fdadh3);
-                        valorOK=true;
-                  }
-                } else {
-                    alert("HAS D'INTRODUIR UN DNI. TORNAM A COMENÇAR");
-                }
-            } while (!valorOK);
- 
+					var valorOK=false;
+					do {
+					    let nif = prompt("INTRODUEIX UN NIF VÀLID DE 8 XIFRES I 1 LLETRA (com per exemple: 78207737D):");
+					    if (validaObligatori(nif)){
+					        if (validaNIF(nif)){
+					            document.write(idash3);
+					            document.write("EL DNI INTRODUÏT - <b>" + nif + "</b> - ÉS CORRECTE");
+					            document.write(fdash3);
+					            valorOK=true;
+					      } else {
+					            document.write(idadh3);
+					            document.write("EL DNI INTRODUÏT - <b>" + nif + "</b> - NO ÉS CORRECTE");
+					            document.write(fdadh3);
+					            valorOK=true;
+					      }
+					    } else {
+					        alert("HAS D'INTRODUIR UN DNI. TORNAM A COMENÇAR");
+					    }
+					} while (!valorOK);
+				</script>
+			</div>
 
-        </script>
-      </div>
+			<div id="boto_tornar" class="d-grid gap-2 d-md-block">
+				<button
+					type="button"
+					class="btn btn-success"
+					onclick="window.location.href='index.html'"
+				>
+					TORNAR
+				</button>
+			</div>
+		</div>
 
-      <div id="boto_tornar" class="d-grid gap-2 d-md-block">
-            <button type="button" class="btn btn-success" onclick="window.location.href='index.html'">TORNAR</button>
-      </div>
-    </div>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+		<!-- Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>

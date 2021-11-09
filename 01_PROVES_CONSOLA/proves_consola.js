@@ -1,4 +1,3 @@
-
 // ************ SPLIT *********************
 
 /*
@@ -26,44 +25,42 @@ let mes = 2;
 let any = 2015;
 
 function validaDiaDelMes(mes, any) {
-    let dia = -1;
-    mes = parseInt(mes);
-    any = parseInt(any);
+	let dia = -1;
+	mes = parseInt(mes);
+	any = parseInt(any);
 
-    switch (mes) {
+	switch (mes) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12: {
+			dia = 31;
+			break;
+		}
 
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12: {
-            dia = 31;
-            break;
-        }
-            
-        case 4:
-        case 6:
-        case 9:
-        case 11: {
-            dia = 30;
-            break;
-        }
-            
-        case 2: {
-            if ((any % 4 === 0) && ((any % 100 !== 0) || (any % 400 === 0))) {
-                dia = 29;
-            } else {
-                dia = 28;
-            }
+		case 4:
+		case 6:
+		case 9:
+		case 11: {
+			dia = 30;
+			break;
+		}
 
-            break;
-        }
-    }
-    return dia;
+		case 2: {
+			if (any % 4 === 0 && (any % 100 !== 0 || any % 400 === 0)) {
+				dia = 29;
+			} else {
+				dia = 28;
+			}
+
+			break;
+		}
+	}
+	return dia;
 }
-
 
 //console.log(any % 4);
 //console.log(any % 100);
@@ -74,7 +71,7 @@ console.log();
 
 // ************************************
 
-let nif = "78207737D";
+let nif = '78207737D';
 let lletra = nif.charAt(8);
 console.log(lletra);
 let numero = nif.substring(0, 8);
@@ -87,7 +84,7 @@ console.log(index);
 
 console.log();
 
-nif = "A8207737D";
+nif = 'A8207737D';
 lletra = nif.charAt(8);
 console.log(lletra);
 numero = nif.substring(0, 8);
@@ -100,3 +97,21 @@ console.log(index);
 
 console.log();
 
+// ************************************
+
+// EXTREURE CARACTERS D'UNA CADENA
+
+let cadena = 'ABCDE';
+console.log(cadena.charAt(0));
+console.log(cadena.charAt(1));
+console.log(cadena.charAt(2));
+console.log(cadena.charAt(3));
+console.log(cadena.charAt(4));
+console.log(cadena.charAt(5));
+console.log();
+console.log(cadena[0]);
+console.log(cadena[1]);
+console.log(cadena[2]);
+console.log(cadena[3]);
+console.log(cadena[4]);
+console.log(cadena[5]);
