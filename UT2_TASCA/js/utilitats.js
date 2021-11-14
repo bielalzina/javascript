@@ -1,8 +1,14 @@
+// BOOTSTRAP ALERT SUCCESS
 const idash3 = '<div class="alert alert-success" role="alert"><h3>';
 const fdash3 = '</h3></div>';
 
+// BOOTSTRAP ALERT DANGER
 const idadh3 = '<div class="alert alert-danger" role="alert"><h3>';
 const fdadh3 = '</h3></div>';
+
+// BOOTSTRAP ALERT PRIMARY
+const idaph3 = '<div class="alert alert-primary" role="alert"><h3>';
+const fdaph3 = '</h3></div>';
 
 /**
  * Comprova que un camp obligatori contengui informació. Realitza tres comprovacions:
@@ -44,33 +50,44 @@ function validaSencer(numero) {
 	}
 }
 
-/**Comprova que el paràmetre sigui numèric i de tipus "real".
- * Comprova que contengui dades, que siguin numèriques i que el reste de la
- * divisió sencera amb 1 no sigui 0.
+/** Mostra de forma recursiva els caracters que formen una cadena
  *
- * @param  numero La dada a comprolet.
- * @returns true si és un valor decimal
+ * @param cadena La cadena de la qual volem mostrar els carcters
+ * @returns els caracters que formen la cadena separats per guions
  */
 
-function validaDecimal(numero) {
-	if (!isNaN(numero) && numero % 1 !== 0) {
-		return true;
-	} else {
-		return false;
+function mostraXifres(cadena) {
+	if (cadena.length == 1) {
+		return cadena;
 	}
+	return (
+		cadena.charAt(0) + ' - ' + mostraXifres(cadena.slice(1 - cadena.length))
+	);
 }
 
-/** Demana a l'usuari un nombre sencer. Mostra el missatge a l'alert per informar
- * a l'usuari de quina dada li demanam. No accepta cap dada que no sigui un sencer.
+/** Mostra de forma recursiva els caracters que formen una cadena
  *
- * @param  cadena El prompt de l'alert.
- * @returns un valor sencer
+ * @param cadena La cadena de la qual volem mostrar els carcters
+ * @param invers Si es true, tracta la cadena en sentit invers
+ *               Si es false, tracta la cadena en sentit natural
+ * @returns els caracters que formen la cadena separats per guions
  */
 
-function llegeixSencer(missatge) {
-	let numero;
-	do {
-		numero = prompt(missatge);
-	} while (!validaSencer(numero));
-	return parseInt(numero);
+function mostraXifresSentit(cadena, invers) {
+	if (cadena.length == 1) {
+		return cadena;
+	}
+	if (invers == false) {
+		return (
+			cadena.charAt(0) +
+			' - ' +
+			mostraXifresSentit(cadena.slice(1 - cadena.length), invers)
+		);
+	} else {
+		return (
+			cadena.charAt(cadena.length - 1) +
+			' - ' +
+			mostraXifresSentit(cadena.slice(0, cadena.length - 1), invers)
+		);
+	}
 }

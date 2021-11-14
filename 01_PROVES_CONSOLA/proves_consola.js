@@ -115,3 +115,43 @@ console.log(cadena[2]);
 console.log(cadena[3]);
 console.log(cadena[4]);
 console.log(cadena[5]);
+console.log();
+
+// ************************************
+
+// FUNCIO RECURSIVA - IMPRIMEIX CARACTERS D'UNA CADENA
+
+let cadena1 = '123456';
+
+function mostraXifres(cadena) {
+	if (cadena.length == 1) {
+		return cadena;
+	}
+	return (
+		cadena.charAt(0) + ' - ' + mostraXifres(cadena.slice(1 - cadena.length))
+	);
+}
+
+console.log(mostraXifres(cadena1));
+
+function mostraXifresInvers(cadena) {
+	if (cadena.length == 1) {
+		return cadena;
+	}
+	return (
+		cadena.charAt(cadena.length - 1) +
+		' - ' +
+		mostraXifresInvers(cadena.slice(0, cadena.length - 1))
+	);
+}
+
+console.log(cadena1.charAt(cadena1.length - 1));
+console.log();
+console.log(cadena1.slice(0, cadena1.length - 1));
+console.log(cadena1.slice(0, cadena1.length - 2));
+console.log(cadena1.slice(0, cadena1.length - 3));
+console.log(cadena1.slice(0, cadena1.length - 4));
+console.log(cadena1.slice(0, cadena1.length - 5));
+console.log();
+
+console.log(mostraXifresInvers(cadena1));

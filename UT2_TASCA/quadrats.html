@@ -26,16 +26,19 @@
 		<div class="container">
 			<div class="row">
 				<script type="text/JavaScript">
+					let minim;
+					let maxim;
 
 					let minimOK=false;
 					do {
-					                   let minim = prompt("INTRODUEIX EL PRIMER VALOR SENCER (MÍNIM):");
+						minim = prompt("INTRODUEIX EL PRIMER VALOR SENCER (MÍNIM):");
+
 					    //Comprovam que l'usuari introdueixi algun valor
 					    if(validaObligatori(minim)){
 					        //Comprovam que el valor sigui sencer
 					        if (validaSencer(minim)) {
-					            document.write(minim);
-					                           minimOK=true;
+								minim = parseInt(minim);
+								minimOK=true;
 					        } else {
 					            alert("HAS D'INTRODUIR UN VALOR SENCER. TORNAM A COMENÇAR")
 					        }
@@ -47,12 +50,13 @@
 					let maximOK=false;
 					//Comprovam que l'usuari introdueixi algun valor
 					do {
-					                   let maxim = prompt("INTRODUEIX EL SEGON VALOR SENCER (MÀXIM), AQUEST HA DE IGUAL O SUPERIOR AL VALOR ANTERIOR:");
+						maxim = prompt("INTRODUEIX EL SEGON VALOR SENCER (MÀXIM), AQUEST HA DE IGUAL O SUPERIOR AL VALOR ANTERIOR:");
+
 					    if(validaObligatori(maxim)){
 					        //Comprovam que el valor sigui sencer
 					        if (validaSencer(maxim)) {
-					            document.write(maxim);
-					                           maximOK=true;
+								maxim = parseInt(maxim);
+								maximOK=true;
 					        } else {
 					            alert("HAS D'INTRODUIR UN VALOR SENCER. TORNAM A COMENÇAR")
 					        }
@@ -60,6 +64,60 @@
 					        alert("HAS D'INTRODUIR UN VALOR. TORNAM A COMENÇAR")
 					    }
 					} while (!maximOK);
+					if (maxim>=minim){
+						/*
+						Calculam arrels quadradades de minim i maxim
+						i les convertim a numeros sencers
+						*/
+
+						let arrelMinim = parseInt(Math.sqrt(minim));
+						let arrelMaxim = parseInt(Math.sqrt(maxim));
+
+						//console.log(arrelMinim);
+						//console.log(arrelMaxim);
+
+						/*
+						Amb un for recorrem tots els numeros sencers compresos
+						entre arrelMinim i arrelMaxim, tals que el seu quadrat
+						estigui compres entre minim i maxim
+						*/
+
+						document.write(idash3);
+						document.write("<p>ELS QUADRATS DELS NUMEROS SEGÜENTS ESTAN "+
+						"COMPRESOS ENTRE EL VALOR MINIM (<b>" + minim + "</b>)"+
+						" I EL VALOR MAXIM (<b>" + maxim + "</b>).</p>");
+						document.write("<ul>");
+
+						for (let index = arrelMinim; index <= arrelMaxim; index++) {
+							/*
+							Consider que els valors mímin i màxim estan inclosos
+							, és a dir, si minim = 4 i màxim = 16, els sencers
+							tals que el seu quadrat estigui compres
+							entre 4 i 16 son: 2, 3 i 4
+							Per tant les compracions son >= i <=
+							Si no estiguessin inclosos les comparcions > i <
+							*/
+
+							if ((Math.pow(index,2))>=minim && (Math.pow(index,2))<=maxim){
+								document.write("<li>"+index+"</li>");
+							}
+
+						}
+
+						document.write("</ul>");
+						document.write(fdash3);
+
+
+
+
+					} else {
+						document.write(idadh3);
+						document.write("NO ES PODEN FER ELS CÀLCULS. "+
+						"EL VALOR MINIM (<b>" + minim + "</b>)"+
+						" NO POT SER SUPERIOR AL VALOR MAXIM (<b>" + maxim + "</b>).");
+						document.write(fdadh3);
+
+					}
 				</script>
 			</div>
 		</div>
