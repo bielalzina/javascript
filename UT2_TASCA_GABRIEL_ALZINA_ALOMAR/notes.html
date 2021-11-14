@@ -30,16 +30,20 @@
 				<script type="text/JavaScript">
 					var notaOK=false;
 					do {
-					let nota = prompt("INTRODUEIX LA QUALIFICACIÓ OBTINGUDA PER L'ALUMNE/A. HA DE SER UN NUMERO SENCER I ESTAR COMPRESA ENTRE 0 i 10 (AMBDÓS INCLOSOS)");
+					let nota = prompt("INTRODUEIX LA QUALIFICACIÓ OBTINGUDA " +
+					"PER L'ALUMNE/A. HA DE SER UN NUMERO SENCER I ESTAR " +
+					"COMPRESA ENTRE 0 i 10 (AMBDÓS INCLOSOS)");
 					//Comprovam que l'usuari introdueixi algun valor
 					if (validaObligatori(nota)){
 					if (retornaNotaQualitativa(nota)!="Nota incorrecta") {
 					document.write(idash3);
-					document.write("A UN <b>" + nota + "</b> LI CORRESPON UN <b>" + retornaNotaQualitativa(nota) + "</b>");
+					document.write("A UN <b>" + nota + "</b> LI CORRESPON UN <b>" +
+						 retornaNotaQualitativa(nota) + "</b>");
 					document.write(fdash3);
 					notaOK=true;
 					} else{
-					alert("HAS INTRODUÏT UNA NOTA QUE NO S'AJUSTA ALS PARAMETRES. TORNAM A COMENÇAR");
+					alert("HAS INTRODUÏT UNA NOTA QUE NO S'AJUSTA ALS " +
+					"PARAMETRES. TORNAM A COMENÇAR");
 					}
 					} else {
 					alert("HAS D'INTRODUIR UNA NOTA. TORNAM A COMENÇAR");

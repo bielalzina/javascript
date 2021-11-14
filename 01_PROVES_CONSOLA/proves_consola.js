@@ -155,3 +155,100 @@ console.log(cadena1.slice(0, cadena1.length - 5));
 console.log();
 
 console.log(mostraXifresInvers(cadena1));
+
+console.log();
+
+/*
+for (let a = 1; a < 10; a++) {
+	console.log(a);
+}
+
+console.log(a);
+*/
+
+/*
+let a = 12;
+
+while (a < 20) {
+	console.log(a);
+
+	a++;
+}
+*/
+
+/*
+let a = 3;
+
+if (a !== '3') {
+	console.log('Diferents');
+}
+
+console.log('Fi');
+*/
+
+/*
+let a = 12;
+
+while (a < 20) {
+	a++;
+
+	console.log(a);
+}
+*/
+
+/*
+for (let a = 1; a < 10; a++) {
+	let b = 1000;
+	console.log(a);
+}
+
+console.log(b);
+*/
+
+/*
+console.log('3' != 3);
+*/
+
+/*
+let a = 21;
+
+do {
+	console.log(a);
+} while (a < 20);
+*/
+
+/*
+console.log('3' !== 3);
+*/
+
+/*
+for (let a = 10; a < 10; a++) {
+	console.log(a);
+}
+*/
+
+/*
+for (let a = 1; a < 10; a++) {
+	console.log(a);
+}
+*/
+
+/*
+for (var a = 10; a < 10; a++) {
+	console.log(a);
+}
+
+console.log(a);
+*/
+
+console.log('aqui');
+
+let a = '20';
+
+let b = '100';
+
+if (a >= b) {
+	console.log('a>=b');
+} else {
+	console.log('b>a');
+}
