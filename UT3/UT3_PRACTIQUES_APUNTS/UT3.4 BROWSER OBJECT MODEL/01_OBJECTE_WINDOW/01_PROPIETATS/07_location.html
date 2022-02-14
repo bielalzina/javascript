@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The LOCATION.ORIGIN Property</h2>
+    <h2>TORNA AQUEST OBJECTE ASSOCIAT A LA FINESTRA</h2>
+
+    <br />
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      let cadena = "";
+      let origen = window.location.origin;
+      cadena += "<p>WINDOW.LOCATION.ORIGIN: " + origen + "</p>";
+
+      document.getElementById("mostrador").innerHTML = cadena;
+    </script>
+  </body>
+</html>

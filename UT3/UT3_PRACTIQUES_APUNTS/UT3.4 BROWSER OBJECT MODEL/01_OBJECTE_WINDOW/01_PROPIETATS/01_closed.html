@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The CLOSED Property</h2>
+
+    <p><button onclick="openWin()">OBRE "myWindow"</button></p>
+    <p><button onclick="closeWin()">TANCA "myWindow"</button></p>
+    <p>
+      <button onclick="checkWin()">
+        COM ESTA "myWindow" TANCADA o OBERTA?
+      </button>
+    </p>
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      let myWindow;
+
+      function openWin() {
+        myWindow = window.open("", "myWindow", "width=400, height=200");
+      }
+
+      function closeWin() {
+        if (myWindow) {
+          myWindow.close();
+        }
+      }
+
+      function checkWin() {
+        let cadena = "";
+        if (!myWindow) {
+          cadena += "myWindow no ha estat mai OBERTA";
+        } else {
+          if (myWindow.closed) {
+            cadena += "myWindow està TANCADA";
+          } else {
+            cadena += "myWindow està OBERTA";
+          }
+        }
+        document.getElementById("mostrador").innerHTML = cadena;
+      }
+    </script>
+  </body>
+</html>

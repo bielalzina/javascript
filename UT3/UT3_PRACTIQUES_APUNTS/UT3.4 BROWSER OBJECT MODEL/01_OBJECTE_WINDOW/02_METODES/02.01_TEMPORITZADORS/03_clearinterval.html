@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The CLEARINTERVAL() Method</h2>
+    <h3>
+      clearInterval(identificador) Elimina el temporitzador repetitiu que li
+      passam com a paràmetre.
+    </h3>
+
+    <div id="mostrador"></div>
+    <br />
+    <button onclick="aturaHora()">Atura el RELLOTGE</button>
+
+    <script type="text/javascript">
+      const identificador = setInterval(mostraHora, 1000);
+      function mostraHora() {
+        const data = new Date();
+        document.getElementById("mostrador").innerHTML =
+          "<h4>" + data.toLocaleTimeString() + "</h4>";
+      }
+      function aturaHora() {
+        clearInterval(identificador);
+      }
+    </script>
+  </body>
+</html>

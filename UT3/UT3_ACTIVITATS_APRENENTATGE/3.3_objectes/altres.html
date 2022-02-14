@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALTRES</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript"></script>
+  </head>
+
+  <body>
+    <h1>ALTRES</h1>
+
+    <h2>CODIFICAR/DECODIFICAR URL</h2>
+
+    <script type="text/javascript">
+      var uri = 'http://www.paucasesnovescifp.cat?nom="Jo mateix"';
+      document.write("<p>URL A CODIFICAR: " + uri + "</p>");
+      var codificada = encodeURI(uri);
+      document.write("<p>CODIFICADA AMB encodeURI: " + codificada + "</p>");
+      var decodificada = decodeURI(codificada);
+      document.write("<p>DECODIFICADA AMB decodeURI: " + decodificada + "</p>");
+      var codificada2 = encodeURIComponent(uri);
+      document.write(
+        "<p>CODIFICADA AMB encodeURIComponent: " + codificada2 + "</p>"
+      );
+      var decodificada2 = decodeURIComponent(codificada2);
+      document.write(
+        "<p>DECODIFICADA AMB decodeURIComponent: " + decodificada2 + "</p>"
+      );
+    </script>
+
+    <h2>UTILITZAR EVAL</h2>
+    <script type="text/javascript">
+      var guio = document.write("<p>PARAGRAF GENERAT AMB eval()");
+      eval(guio);
+    </script>
+
+    <h2>LLANÇAMENT MONEDA</h2>
+    <script type="text/javascript">
+      let moneda = Math.random();
+      if (moneda < 0.5) {
+        document.write("<p>Ha sortit <b>CARA</b>");
+      } else {
+        document.write("<p>Ha sortit <b>CREU</b>");
+      }
+    </script>
+
+    <h2>GENERAR UNA FUNCIÓ</h2>
+    <script type="text/javascript">
+      var funcio = new Function("a", "b", "return a+b;");
+      document.write('<p>new Function("a","b","return a+b;");');
+      document.write("<p>Resultat: <b>" + funcio(2, 3) + "</b>");
+    </script>
+
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SET</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+      function printArray(vector) {
+        let cadena = "[";
+        for (let value of vector) {
+          cadena += value + ", ";
+        }
+        return cadena.substring(0, cadena.length - 2) + "]";
+      }
+      window.onload = function () {
+        let conjunt = new Set();
+        conjunt.add(1);
+        conjunt.add(2);
+        conjunt.add(3);
+        conjunt.add(1);
+        conjunt.add(true);
+        conjunt.add(false);
+        conjunt.add(true);
+        conjunt.add("GABRIEL");
+        conjunt.add("Gabriel");
+        conjunt.add("gABRIEL");
+        conjunt.add("GABRIEL");
+        console.log(conjunt);
+
+        document.getElementById("mostrador").innerHTML = printArray(
+          conjunt.values()
+        );
+
+        let original = [
+          1,
+          1,
+          1,
+          2,
+          3,
+          3,
+          4,
+          5,
+          6,
+          true,
+          true,
+          false,
+          "A",
+          "A",
+          "a",
+        ];
+
+        document.getElementById("original").innerHTML = printArray(original);
+
+        let senseDuplicats = new Set(original);
+
+        document.getElementById("noDuplicats").innerHTML = printArray(
+          senseDuplicats.values()
+        );
+      };
+    </script>
+  </head>
+
+  <body>
+    <h1>CONJUNTS - SET</h1>
+
+    <h2>CONJUNT - SET CREAT AL JAVASCRIPT</h2>
+
+    <div id="mostrador"></div>
+
+    <h2>ELIMINAR DUPLICATS AMB CONJUNT/SET</h2>
+    <h3>ORIGINAL AMB DUPLICATS</h3>
+    <div id="original"></div>
+    <h3>SENSE DUPLICATS</h3>
+    <div id="noDuplicats"></div>
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

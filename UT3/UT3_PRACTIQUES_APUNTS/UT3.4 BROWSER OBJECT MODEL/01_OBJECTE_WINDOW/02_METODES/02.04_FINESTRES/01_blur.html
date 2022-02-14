@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The BLUR() Method</h2>
+    <h3>blur() Elimina el focus de la finestra actual</h3>
+    <p>Pitja el boto per obrir una nova finestra i eliminar el focus d'ella</p>
+    <br />
+    <button onclick="creaFinestra()">CREA UNA FINESTRA</button>
+    <br />
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      function creaFinestra() {
+        var laMevaFinestra = "";
+        laMevaFinestra = window.open("", "", "width=200, height=150");
+        laMevaFinestra.blur();
+      }
+    </script>
+  </body>
+</html>

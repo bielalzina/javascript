@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DADES REBUDES PER FORMULARI</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        let cerca = location.search;
+        //console.log(cerca); => ?preu1=2&preu2=1&preu3=3
+
+        if (cerca.length > 0) {
+          //Eliminam ?
+
+          //console.log(cerca); => preu1=2&preu2=1&preu3=3
+
+          // Cream array params a partir de dividir cerca pel caracter "&"
+
+          var params = cerca.split("&");
+
+          //console.log(params); => ['preu1=1', 'preu2=2', 'preu3=3']
+
+          cadena = "";
+
+          for (let i = 0; i < params.length; i++) {
+            var parts = params[i].split("=");
+            cadena +=
+              "<p><strong>" + parts[0] + ": </strong>" + parts[1] + "</p>";
+          }
+
+          document.getElementById("mostrador").innerHTML = cadena;
+        }
+
+        document.getElementById("boto").onclick = function () {
+          history.back();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>DADES REBUDES PER FORMULARI VIA GET</h1>
+
+    <div id="mostrador"></div>
+
+    <button type="button" id="boto">TORNAR</button>
+  </body>
+</html>

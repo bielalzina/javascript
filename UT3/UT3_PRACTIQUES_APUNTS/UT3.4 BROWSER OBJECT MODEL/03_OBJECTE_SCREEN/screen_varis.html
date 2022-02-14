@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The SCREEN Object</h1>
+    <h2></h2>
+    <h3>availHeight L'alçada disponible de la pantalla</h3>
+    <div id="mostrador1"></div>
+    <h3>availWidth L'amplada disponible de la pantalla.</h3>
+    <div id="mostrador2"></div>
+    <h3>
+      colorDepth La profunditat de color en bits per a representar imatges.
+    </h3>
+    <div id="mostrador3"></div>
+    <h3>height L'alçada total de la pantalla.</h3>
+    <div id="mostrador4"></div>
+    <h3>width L'amplada total de la pantalla.</h3>
+    <div id="mostrador5"></div>
+    <h3>
+      pixelDepth La resolució de color (en bits per pixel) de la pantalla (menys
+      ie).
+    </h3>
+    <div id="mostrador6"></div>
+
+    <script type="text/javascript">
+      document.getElementById("mostrador1").innerHTML =
+        "<h4>" + screen.availHeight + "</h4>";
+      document.getElementById("mostrador2").innerHTML =
+        "<h4>" + screen.availWidth + "</h4>";
+      document.getElementById("mostrador3").innerHTML =
+        "<h4>" + screen.colorDepth + "</h4>";
+      document.getElementById("mostrador4").innerHTML =
+        "<h4>" + screen.height + "</h4>";
+      document.getElementById("mostrador5").innerHTML =
+        "<h4>" + screen.width + "</h4>";
+
+      document.getElementById("mostrador6").innerHTML =
+        "<h4>" + screen.pixelDepth + "</h4>";
+    </script>
+  </body>
+</html>

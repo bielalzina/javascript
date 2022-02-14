@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EXERCICI 3</title>
+    <link href="css/estils.css" rel="stylesheet" />
+    <link rel="icon" href="imatges/logo-cifp.ico" type="image/x-icon" />
+    <script src="js/funcions.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        //Cream objecte EXPOSICIÓ
+        let expo = new Exposicio(
+          "Face Control",
+          "03/12/2021",
+          "22/03/2022",
+          "MACBA"
+        );
+        //Cream artistes
+        let artista1 = new Artista("Shu Lea Cheang", "Xina");
+        let artista2 = new Artista("Diane Arbus", "França");
+        let artista3 = new Artista("Thomas Ruf", "Alemanya");
+        //Afegim artites a expo
+        expo.afegirArtista(artista1);
+        expo.afegirArtista(artista1);
+        expo.afegirArtista(artista2);
+        expo.afegirArtista(artista3);
+        expo.eliminarArtista(artista3);
+
+        let cadena = "";
+        cadena += '<div class="contenidorInfo">';
+        cadena += "<p>TÍTOL: <strong>" + expo.titol + "</strong></p>";
+        cadena +=
+          "<p>DES DE DIA <strong>" +
+          expo.dataInici +
+          "</strong> FINS DIA <strong>" +
+          expo.dataFinal +
+          "</strong></p>";
+        cadena += "<p>LLOC: <strong>" + expo.centre + "</strong></p>";
+        cadena += "<p>ARTISTES CONVIDATS:</p>";
+        cadena += "<ol>";
+        for (let infoArtista of expo.artistes.values()) {
+          cadena +=
+            "<li><strong>" +
+            infoArtista.nom +
+            " (" +
+            infoArtista.nacionalitat +
+            ")</strong></li>";
+        }
+        cadena += "</ol>";
+
+        cadena += "</div>";
+        console.log(expo.artistes);
+        document.getElementById("contingut").innerHTML = cadena;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>EXERCICI 3</h1>
+    <h2>EXPOSICIÓ</h2>
+    <div id="contingut"></div>
+
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

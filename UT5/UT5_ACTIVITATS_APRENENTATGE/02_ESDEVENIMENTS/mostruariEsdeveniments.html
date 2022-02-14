@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOSTRA D'ESDEVENIMENTS</title>
+    <style type="text/css">
+      #mostrador {
+        width: 300px;
+        height: 300px;
+        overflow: scroll;
+        border: 1px solid black;
+        padding: 2em;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        let comptador = 0;
+        function afegeix(cadena) {
+          const objecte = document.getElementById("mostrador");
+          comptador++;
+          objecte.innerHTML += "<p>" + comptador + ". " + cadena + "</p>";
+        }
+
+        // PARAGRAF
+        document.getElementById("paragraf").onmouseover = function () {
+          afegeix("paragraf: onmouseover");
+        };
+
+        document.getElementById("paragraf").onmouseout = function () {
+          afegeix("paragraf: onmouseout");
+        };
+        document.getElementById("paragraf").onmouseup = function () {
+          afegeix("paragraf: onmouseup");
+        };
+
+        document.getElementById("paragraf").onmousedown = function () {
+          afegeix("paragraf: onmousedown");
+        };
+
+        document.getElementById("paragraf").onmousemove = function () {
+          afegeix("paragraf: onmousemove");
+        };
+
+        document.getElementById("paragraf").onclick = function () {
+          afegeix("paragraf: onclick");
+        };
+
+        document.getElementById("paragraf").ondblclick = function () {
+          afegeix("paragraf: ondblclick");
+        };
+
+        // TEXTE
+
+        document.getElementById("texte").onmouseover = function () {
+          afegeix("texte: onmouseover");
+        };
+
+        document.getElementById("texte").onmouseout = function () {
+          afegeix("texte: onmouseout");
+        };
+        document.getElementById("texte").onmouseup = function () {
+          afegeix("texte: onmouseup");
+        };
+
+        document.getElementById("texte").onmousedown = function () {
+          afegeix("texte: onmousedown");
+        };
+
+        document.getElementById("texte").onmousemove = function () {
+          afegeix("texte: onmousemove");
+        };
+
+        document.getElementById("texte").onclick = function () {
+          afegeix("texte: onclick");
+        };
+
+        document.getElementById("texte").ondblclick = function () {
+          afegeix("texte: ondblclick");
+        };
+
+        document.getElementById("texte").onkeydown = function () {
+          afegeix("texte: onkeydown");
+        };
+
+        document.getElementById("texte").onkeyup = function () {
+          afegeix("texte: onkeyup");
+        };
+
+        document.getElementById("texte").onkeypress = function () {
+          afegeix("texte: onkeypress");
+        };
+
+        document.getElementById("texte").onfocus = function () {
+          afegeix("texte: onfocus");
+        };
+
+        document.getElementById("texte").onblur = function () {
+          afegeix("texte: onblur");
+        };
+
+        document.getElementById("texte").onchange = function () {
+          afegeix("texte: onchange");
+        };
+
+        document.getElementById("texte").onselect = function () {
+          afegeix("texte: onselect");
+        };
+
+        //FORMULARI
+        document.getElementById("formulari").onsubmit = function () {
+          afegeix("formulari: onsubmit");
+          esdeveniment.preventDefault();
+        };
+
+        document.getElementById("formulari").onreset = function () {
+          afegeix("formulari: onreset");
+        };
+
+        // WINDOW
+        window.onbeforeunload = function () {
+          afegeix("window: onbeforeUnload");
+          return "Alerta";
+        };
+
+        afegeix("window: onload");
+
+        //window.onunload=function(){confirm("Voleu sortir?");};
+
+        document.getElementById("boto").onclick = function () {
+          document.getElementById("texte").value = "HOLA!!!";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>MOSTRA D'ESDEVENIMENTS</h1>
+    <p id="paragraf">AIXÒ ERA I NO ERA, BON VIATGE FACI LA CADERNERA</p>
+    <form action="#" method="get" id="formulari">
+      <p>
+        <label for="text">TEXT: </label
+        ><input type="text" name="texte" id="texte" />
+      </p>
+      <p><button type="submit">ENVIAR</button></p>
+      <p><button type="reset">RESET</button></p>
+      <p><button type="button" id="boto">CANVIAR</button></p>
+    </form>
+    <p><a href="http://www.paucasesnovescifpjt.cat">CIFP PAU CASESNOVES</a></p>
+    <h1>ESDEVENIMENTS</h1>
+    <div id="mostrador"></div>
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

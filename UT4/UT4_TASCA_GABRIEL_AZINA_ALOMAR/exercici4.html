@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EXERCICI 4</title>
+    <link href="css/estils.css" rel="stylesheet" />
+    <link rel="icon" href="imatges/logo-cifp.ico" type="image/x-icon" />
+    <script src="js/funcions.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        //Recuperam array Centres Culturals
+        var centresCulturals = tornaArrayCentresCulturals();
+        // Convertim array objctes a JSON
+        var cadenaJSON = JSON.stringify(centresCulturals);
+        // Mostram JSON
+        var cadena = "<h3>RESULTAT CONSULTA EN NOTACIÓ JSON:</h3>";
+        cadena += "<p>" + cadenaJSON + "</p>";
+        cadena += "<h3>TAULA RESULTANT:</h3>";
+        document.getElementById("contingut").innerHTML = cadena;
+        //Recuperam informació del JSON
+        var infoCentres = JSON.parse(cadenaJSON);
+        var titolsColumnes = document.getElementById("titolColumna");
+        for (var nomAtribut in infoCentres[0]) {
+          titolsColumnes.innerHTML +=
+            "<th>" + nomAtribut.toUpperCase() + "</th>";
+        }
+        var fila = "";
+        for (var index in infoCentres) {
+          fila += "<tr>";
+          for (var nomAtribut in infoCentres[index]) {
+            fila += "<td>" + infoCentres[index][nomAtribut] + "</td>";
+          }
+          fila += "</tr>";
+        }
+        document.getElementById("contingutTaula").innerHTML = fila;
+        document.getElementById("total").innerHTML =
+          "NUM. DE REGSITRES: " + infoCentres.length;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>EXERCICI 4</h1>
+    <h2>LLISTAT CENTRES CULTURALS</h2>
+    <h3>CONSULTA A BBDD</h3>
+    <p><code>SELECT * FROM centresCulturals WHERE poblacio='Palma';</code></p>
+    <div id="contingut"></div>
+    <table>
+      <thead>
+        <tr id="titolColumna"></tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td id="total" colspan="6"></td>
+        </tr>
+      </tfoot>
+      <tbody id="contingutTaula"></tbody>
+    </table>
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

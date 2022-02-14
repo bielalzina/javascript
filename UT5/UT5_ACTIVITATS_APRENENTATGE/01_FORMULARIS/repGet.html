@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DADES REBUDES DEL FORMULARI</title>
+    <style type="text/css">
+      .titol {
+        font-weight: bold;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        var cerca = location.search;
+        console.log(cerca);
+        var cadena = "";
+        if (cerca.length > 0) {
+          //Eliminam ?
+          cerca = cerca.substring(1, cerca.length);
+          console.log(cerca);
+          // Dins params tenim un array on cada posició és de la forma
+          // parametre=valor
+          var params = cerca.split("&");
+          for (let index = 0; index < params.length; index++) {
+            var parts = params[index].split("=");
+            cadena +=
+              '<p><span class="titol">' +
+              parts[0] +
+              ": </span>" +
+              decodeURIComponent(parts[1]) +
+              "</p>";
+          }
+        } else {
+          console.log("NO S'HAN REBUT DADES");
+        }
+
+        document.getElementById("mostrador").innerHTML = cadena;
+
+        document.getElementById("boto").onclick = function () {
+          history.back();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>DADES REBUDES DEL FORMULARI</h1>
+    <div id="mostrador"></div>
+    <p><button type="button" id="boto">TORNAR</button></p>
+  </body>
+</html>

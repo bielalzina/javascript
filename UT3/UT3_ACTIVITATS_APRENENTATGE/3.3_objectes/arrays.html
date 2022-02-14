@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAYS</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            //Exercici 1
+
+            let array = ['0', 1, 2.5, 3, 4, "5", 6,"set", 8.5, true, 10];
+
+            //Exercici 2
+
+            array[15] = 15;
+
+            //Exercici 3
+
+            let cadena = "";
+            cadena += "<p>";
+            for (let i = 0; i < array.length; i++) {
+                cadena += "Index ("+i+"): "+array[i]+"<br>";
+            }
+            cadena += "</p>";
+            
+            document.getElementById("exercici3").innerHTML=cadena;
+
+
+            //Exercici 4
+
+            cadena = "";
+            cadena += "<p>";
+            for (let key in array) {
+                cadena += "Index ("+key+"): "+array[key]+"<br>";
+            }
+            cadena += "</p>";
+            
+            document.getElementById("exercici4").innerHTML=cadena;
+
+            //Exercici 5
+
+            cadena = "";
+            cadena += "<p>";
+            for (let value of array) {
+                cadena += "Valor: "+value+"<br>";
+            }
+            cadena += "</p>";
+            
+            document.getElementById("exercici5").innerHTML=cadena;
+
+            //Exercici 6
+
+            cadena = "";
+            cadena += "<p>";
+            array.forEach(element => {
+                cadena += "Valor: "+element+"<br>";  
+            });
+           
+            cadena += "</p>";
+            
+            document.getElementById("exercici6").innerHTML=cadena;
+
+            //EXERCICI 7
+
+            let paraules1 = ['aixo', 'era', 'i'];
+
+            cadena = "";
+            cadena += "<p>ARRAY 1: "+JSON.stringify(paraules1)+"</p>";
+
+            let paraules2 = ['no', 'era'];
+            cadena += "<p>ARRAY 2: "+JSON.stringify(paraules2)+"</p>";
+
+            let concatenat = paraules1.concat(paraules2);
+            cadena += "<p>ARRAY CONCATENAT: "+JSON.stringify(concatenat)+"</p>";
+
+            document.getElementById("exercici7").innerHTML=cadena;
+
+            //EXERCICI 8
+
+            cadena = "";
+
+            let frase = concatenat.join(" ");
+            cadena += "<p>ORACIÓ RESULTANT: <b>"+frase+"</b></p>";
+
+            document.getElementById("exercici8").innerHTML=cadena;
+
+            //EXERCICI 9
+            
+            cadena = "";
+
+            let concatenatInvertit = concatenat.reverse();
+            let fraseInvertida = concatenatInvertit.join(" ");
+            cadena += "<p>ORACIÓ RESULTANT: <b>"+fraseInvertida+"</b></p>";
+
+            document.getElementById("exercici9").innerHTML=cadena;
+
+            //EXERCICI 10
+
+            cadena = "";
+            cadena += "<p>";
+
+            let pila = [];
+
+            for (let i = 0; i < 10;i ++) {
+                pila.push(i);
+                cadena += JSON.stringify(pila)+"<br>";                
+            }
+
+            cadena += "</p>";
+
+            cadena += "<p>";
+            while(pila.length > 0){
+                cadena += "ELEMENT ESBORRAT: "+pila.pop()+" QUEDEN: "+JSON.stringify(pila)+"<br>";            
+            }
+            cadena += "</p>";
+
+            document.getElementById("exercici10").innerHTML=cadena;
+
+            //EXERCICI 11
+
+            cadena = "";
+            
+            let valorsAleatoris = [];
+
+            for (let i = 0; i < 10; i++) {
+                valorsAleatoris.push(parseFloat((Math.random()*100+1).toFixed(1)));                
+            }
+
+            cadena += "<p>ARRAY SENSE ORDENAR: "+JSON.stringify(valorsAleatoris)+"</p>";
+
+            let valorsOrdenats = valorsAleatoris.sort(function(a,b) {return a-b});
+
+            cadena += "<p>ARRAY ORDENAT: <b>"+JSON.stringify(valorsOrdenats)+"</b></p>";
+
+            document.getElementById("exercici11").innerHTML=cadena;
+
+            //EXERCICI 12
+
+            let palindromo = ["Yo", "hago", "yoga", "hoy"];
+
+            cadena = "";
+
+            cadena += "<p>PALINDROMO: "+JSON.stringify(palindromo)+"</p>";
+
+            //console.log(palindromo);
+
+            let palindromoGirat = palindromo.map(actual=>{
+                let nova="";
+                for (let j=actual.length-1 ; j>=0 ; j--) {
+                    //console.log(actual.charAt(j));
+                    nova += actual.charAt(j);                    
+                }
+                return nova;
+            });
+
+            cadena += "<p>PALINDROMO GIRAT: "+JSON.stringify(palindromoGirat)+"</p>";
+
+            document.getElementById("exercici12").innerHTML=cadena;
+
+            //EXERCICI 13
+
+            cadena="";
+            cadena += "<p>ARRAY ORDENAT: <b>"+JSON.stringify(valorsOrdenats)+"</b></p>";
+            
+            let suma = valorsOrdenats.reduce((acumulat, elementActual)=>{
+                return acumulat+elementActual;
+            });
+
+            cadena += "<p>SUMA ELEMENTS: <b>"+suma+"</b></p>";
+
+            document.getElementById("exercici13").innerHTML=cadena;
+
+
+            //EXERCICI 14
+            // notes.html
+
+            //EXERCICI 15
+            // productes.html
+
+
+            //EXERCICI 16
+
+            const arrayOriginal = [0,1,2,3,4,5,6,7,8,9,10];
+
+            cadena="";
+            cadena += "<p>ARRAY ORIGINAL: <b>"+JSON.stringify(arrayOriginal)+"</b></p>";
+
+            const arrayCopiat = copiaArray(arrayOriginal);
+
+            cadena += "<p>ARRAY COPIAT: <b>"+JSON.stringify(arrayCopiat)+"</b></p>";
+
+            document.getElementById("exercici16").innerHTML=cadena;
+
+            //EXERCICI 17
+            
+            //Cream array de 10 elements amb valors numerics sencers aleatoris 
+            //compreos entre 0 i 10
+
+            let numAleatoris = [];
+            for (let i = 0; i < 10; i++) {
+                numAleatoris.push(Math.round(Math.random()*10));
+            }
+
+            cadena="";
+            cadena += "<p>ALEATORIS: <b>"+JSON.stringify(numAleatoris)+"</b></p>";
+
+            let valorMesRepetit = moda(numAleatoris);
+
+            cadena += "<p>MODA: <b>"+valorMesRepetit+"</b></p>";
+
+            document.getElementById("exercici17").innerHTML=cadena;
+
+            //EXERCICI 18
+
+            // Cream string
+
+            const oracio = "Això era i no era";
+
+            cadena="";
+            cadena += "<p>ORACIÓ: <b>" + oracio+"</b></p>";
+
+            const oracioModificada = camelCase(oracio);
+
+            cadena += "<p>ORACIÓ MODIFICADA: <b>" + oracioModificada+"</b></p>";
+
+
+            document.getElementById("exercici18").innerHTML=cadena;
+
+            //EXERCICI 19
+
+            //Cream array de 20 elements amb valors numerics sencers aleatoris 
+            //compreos entre 0 i 10
+
+            let arrayAmbDuplicats = [];
+            for (let i = 0; i < 20; i++) {
+                arrayAmbDuplicats.push(Math.round(Math.random()*10));
+            }
+
+            cadena="";
+            cadena += "<p>ARRAY AMB DUPLICATS: <b>"+JSON.stringify(arrayAmbDuplicats)+"</b></p>";
+
+            let arraySenseDuplicats = eliminaDuplicats(arrayAmbDuplicats);
+
+            cadena += "<p>ARRAY SENSE DUPLICATS: <b>"+JSON.stringify(arraySenseDuplicats)+"</b></p>";
+
+            document.getElementById("exercici19").innerHTML=cadena;
+
+
+        }
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <h1>ARRAYS</h1>
+
+    <h2>EXERCICI 1</h2>
+    <P>Array amb 10 elements</P>
+    <p>let array = ['0', 1, 2.5, 3, 4, "5", 6, set, 8.5, true, 10];</p>
+
+    <h2>EXERCICI 2</h2>
+    <P>Assigna un valor a la posició 15</P>
+    <p>array[15] = 15;</p>
+    
+    <h2>EXERCICI 3</h2>
+    <P>Recorre array amb for normal</P>
+    <div id="exercici3"></div>
+
+    <h2>EXERCICI 4</h2>
+    <P>Recorre array amb for ( key IN array)</P>
+    <div id="exercici4"></div>
+
+    <h2>EXERCICI 5</h2>
+    <P>Recorre array amb for ( value IN array)</P>
+    <div id="exercici5"></div>
+
+    <h2>EXERCICI 6</h2>
+    <P>Recorre array amb foreach  *** NO MOSTRA UNDEFINED ***</P>
+    <div id="exercici6"></div>
+
+    <h2>EXERCICI 7</h2>
+    <P>Crea un array amb tres paraules i un altre amb dues. Concatena'ls.</P>
+    <div id="exercici7"></div>
+
+    <h2>EXERCICI 8</h2>
+    <P>Amb l'array resultant crea una frase.</P>
+    <div id="exercici8"></div>
+
+    <h2>EXERCICI 9</h2>
+    <P>Inverteix l'array i monta una frase.</P>
+    <div id="exercici9"></div>
+
+    <h2>EXERCICI 10</h2>
+    <P>Implementa una pila utilitzant els mètodes que proporciona l'array. 
+        És a dir, crea un array buit, utilitza push per afegir elements i pop per recuperar-los. 
+        Comprova que realment és una estructura LIFO.</P>
+    <div id="exercici10"></div>
+
+    <h2>EXERCICI 11</h2>
+    <P>Crea un array de valors numèrics. Ordena-los de forma ascendent utilitzant el mètode sort.</P>
+    <div id="exercici11"></div>
+
+
+    <h2>EXERCICI 12</h2>
+    <P>Crea un array que contengui tres o quatre paraules. 
+        Utilitza map per generar un array amb les paraules invertides. 
+        Per exemple, si la primera paraula és array la funció del map l’ha de convertir en yarra.
+    </P>
+    <div id="exercici12"></div>
+
+    <h2>EXERCICI 13</h2>
+    <P>Crea una funció que sumi tots els valors d’un array utilitzant reduce.</P>
+    <div id="exercici13"></div>
+
+    <h2>EXERCICI 14</h2>
+    <P>(Opcional) Crea un arxiu javascript amb funcions que tornin el màxim, el mínim 
+        i la mitja d'un array de sencers. Crea el fitxer notes.html amb un formulari 
+        amb un camp de text on l'usuari podrà posar una nota, i dos botons. 
+        El primer botó afegirà la nota a un array. 
+        El segon botó mostrarà totes les notes dins un div i mostrarà la nota màxima, 
+        la mínima i la mitjana de les notes de l'array.
+    </P>
+    <div id="exercici14"></div>
+
+    <h2>EXERCICI 15</h2>
+    <P>(Opcional) Crea un document html amb dos formularis i un div al final:
+        <ul>
+            <li>Un altre formulari amb un div buid i un botó Calcular.</li>
+            <li>En pitjar el botó Continuar hem de crear al div del formulari 
+                tants camps de text com articles hem comprat. Dins cada un d'aquests 
+                camps de text l'usuari ha de posar el preu d'un article.</li>
+            <li>En pitjar el botó Calcular hem de mostrar al div final el total 
+                de la compra i el preu de l'article més car.</li>
+            <li>Per comprovar que generau el segon formulari correctament podeu 
+                enviar-lo a la pàgina repGet.html que trobareu a l'aula virtual.</li>
+        </ul>
+    </P>
+    <div id="exercici15"></div>
+
+    <h2>EXERCICI 16</h2>
+    <P>(Opcional) Al fitxer javascript de l'exercici 14 crea una funció que rebi 
+        com a paràmetre un array i torni una còpia d'aquest array.</P>
+    <div id="exercici16"></div>
+
+    <h2>EXERCICI 17</h2>
+    <P>(Opcional) Al fitxer javascript de l'exercici 14 afegeix una funció que 
+        torni la moda de l'array, és a dir, el valor que apareix més vegades.
+    </P>
+    <div id="exercici17"></div>
+
+    <h2>EXERCICI 18</h2>
+    <P>(Opcional)Al fitxer javascript de l'exercici 14 afegeix una funció que 
+        rebi una frase com a paràmetre i la torni sense espais i en camelCase.
+    </P>
+    <div id="exercici18"></div>
+
+    <h2>EXERCICI 19</h2>
+    <P>(Opcional) Al fitxer javascript de l'exercici 14 afegeix una funció que 
+        rebi un array i el torni sense duplicats.    </P>
+    <div id="exercici19"></div>
+
+
+
+
+
+
+
+
+</body>
+</html>

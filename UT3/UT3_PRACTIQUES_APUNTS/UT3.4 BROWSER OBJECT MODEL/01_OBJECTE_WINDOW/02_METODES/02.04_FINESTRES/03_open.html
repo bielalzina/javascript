@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The OPEN() Method</h2>
+    <h3>
+      open(URL, nom, paràmetres, replace) obre una nova finestra amb l'URL i el
+      nom que li deim. replace=true indica que ha de reemplaçar la URL a
+      l'historial, i els paràmetres permeten establir aspectes de la finestra
+      com les dimensions, barres de desplaçament, ... Alguns navegadors obren la
+      pàgina nova en una finestra i no en una pestanya si establim qualque
+      paràmetre.
+    </h3>
+    <p>Pitja el boto per obrir una nova finestra</p>
+    <br />
+    <button onclick="creaFinestra()">CREA UNA FINESTRA</button>
+    <br />
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      function creaFinestra() {
+        var laMevaFinestra = "";
+        laMevaFinestra = window.open(
+          "https://www.w3schools.com",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400"
+        );
+      }
+    </script>
+  </body>
+</html>

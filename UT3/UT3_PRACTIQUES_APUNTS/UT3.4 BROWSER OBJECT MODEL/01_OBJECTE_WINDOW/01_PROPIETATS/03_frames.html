@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The FRAMES Property</h2>
+
+    <br /><br />
+
+    <iframe src="" style="width: 50%; height: 200px"></iframe>
+    <br />
+    <iframe src="" style="width: 50%; height: 200px"></iframe>
+    <br />
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      let cadena = "";
+      cadena += window.frames;
+      console.log(cadena);
+
+      document.getElementById("mostrador").innerHTML =
+        "FRAMES :" + JSON.stringify(cadena);
+    </script>
+  </body>
+</html>

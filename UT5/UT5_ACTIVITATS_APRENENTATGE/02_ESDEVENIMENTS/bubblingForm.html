@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONTAM PULSACIONS - BUBBLING</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var contador = 0;
+        document.getElementById("formulari").onkeydown = function () {
+          contador++;
+          document.getElementById("mostrador").innerHTML =
+            "<p>CONTADOR PULSACIONS EN TECLAT: " + contador + "</p>";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>CONTAM PULSACIONS - BUBBLING</h1>
+    <form id="formulari">
+      <p><label for="text1">TEXT 1: </label><input type="text" /></p>
+      <p><label for="text2">TEXT 2: </label><input type="text" /></p>
+      <p><label for="text3">TEXT 3: </label><input type="text" /></p>
+      <p><label for="text4">TEXT 4: </label><input type="text" /></p>
+      <p><label for="text5">TEXT 5: </label><input type="text" /></p>
+      <p><label for="text6">TEXT 6: </label><input type="text" /></p>
+      <p><label for="text7">TEXT 7: </label><input type="text" /></p>
+      <p><label for="text8">TEXT 8: </label><input type="text" /></p>
+      <p><label for="text9">TEXT 9: </label><input type="text" /></p>
+      <p><label for="text10">TEXT 10: </label><input type="text" /></p>
+    </form>
+    <div id="mostrador"></div>
+    <a href="index.html">TORNAM A L'INDEX</a>
+  </body>
+</html>

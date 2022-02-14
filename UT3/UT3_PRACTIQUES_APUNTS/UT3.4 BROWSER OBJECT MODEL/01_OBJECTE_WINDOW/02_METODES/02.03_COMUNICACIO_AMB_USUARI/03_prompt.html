@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The PROMPT() Method</h2>
+    <h3>
+      prompt(missatge, valorPerdefecte) mostra una alerta a la qual l'usuari pot
+      introduir un valor. Torna aquest valor.
+    </h3>
+    <p>Pitja el boto per mostrar un missatge PROMPT()</p>
+    <br />
+    <button onclick="missatgePrompt()">VEURE PROMPT()</button>
+    <br />
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      function missatgePrompt() {
+        let text = prompt("Introdueix el teu bom", "Harry Potter");
+
+        document.getElementById("mostrador").innerHTML =
+          "<h4>BENVINGUT: " + text + "</h4>";
+      }
+    </script>
+  </body>
+</html>

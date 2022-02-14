@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRIMER OBJECTE</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var alumne1 = {
+          nom: "Joan",
+          llinatges: "Morro Vallespir",
+          cicle: "GSDAW",
+          grup: "S1W",
+        };
+
+        for (var atribut in alumne1) {
+          document.getElementById("infoAlumne1").innerHTML +=
+            "<p><strong>" + atribut + ": </strong>" + alumne1[atribut] + "</p>";
+        }
+
+        var alumne2 = {};
+        alumne2.nom = "Pere";
+        alumne2["llinatges"] = "Cabot Nadal";
+        alumne2.cicle = "GSADM";
+        alumne2.grup = "S2P";
+
+        for (var atribut in alumne2) {
+          document.getElementById("infoAlumne2").innerHTML +=
+            "<p><strong>" + atribut + ": </strong>" + alumne2[atribut] + "</p>";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>PRIMER OBJECTE</h1>
+    <div id="infoAlumne1">
+      <h2>PRIMER ALUMNE</h2>
+      <p>
+        <code
+          >var alumne1 = {nom: "Joan", llinatges: "Morro Vallespir", cicle:
+          "GSDAW", grup: "S1W"};</code
+        >
+      </p>
+    </div>
+    <div id="infoAlumne2">
+      <h2>SEGON ALUMNE</h2>
+      <p>
+        <code>
+          var alumne2={};<br />
+          alumne2.nom="Pere";<br />
+          alumne2.llinatges="Cabot Nadal";<br />
+          alumne2.cicle="GSADM";<br />
+          alumne2.grup="S2P";
+        </code>
+      </p>
+    </div>
+  </body>
+</html>

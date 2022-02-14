@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WINDOW</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var myWindow;
+        document.getElementById("bObrir").onclick = function () {
+          if (myWindow === undefined || myWindow.closed) {
+            myWindow = window.open(
+              "tanca.html",
+              "Tanca",
+              "width=200,height=200"
+            );
+          }
+        };
+        document.getElementById("bTanca").onclick = function () {
+          if (!myWindow.closed) {
+            myWindow.close();
+          }
+        };
+        document.getElementById("bCanvia").onclick = function () {
+          if (!myWindow.closed) {
+            myWindow.document.getElementById("paragraf").innerHTML =
+              "PARAGRAF CANVIAT";
+          }
+        };
+        document.getElementById("bResize").onclick = function () {
+          if (!myWindow.closed) {
+            myWindow.resizeTo(500, 500);
+          }
+        };
+        document.getElementById("bMove").onclick = function () {
+          if (!myWindow.closed) {
+            myWindow.moveTo(500, 500);
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>WINDOW</h1>
+    <div>
+      <button id="bObrir">OBRIR</button>
+      <button id="bResize">MODIFICA</button>
+      <button id="bMove">MOU</button>
+      <button id="bCanvia">CANVIA PARAGRAF</button>
+      <button id="bTanca">TANCA</button>
+    </div>
+    <p><a href="index.html">Tornar a l'index</a>.</p>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVENT OBJECT</title>
+    <script type="text/javascript">
+      function mostraEvent(e) {
+        let cadena = "";
+        for (let index in e) {
+          if (typeof e[index] !== "function" && typeof e[index] !== "object") {
+            cadena += "<p><strong>" + index + ":</strong> " + e[index] + "</p>";
+          }
+        }
+        document.getElementById("mostrador").innerHTML = cadena;
+      }
+      window.onload = function () {
+        document.getElementById("boto").onclick = mostraEvent;
+        document.getElementById("text").onkeydown = mostraEvent;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>EVENT OBJECT</h1>
+    <form id="formulari">
+      <p>
+        <label for="text">TEXT: </label
+        ><input type="text" name="text" id="text" />
+      </p>
+      <p><button type="button" id="boto">PITJA!!!</button></p>
+      <div id="mostrador"></div>
+    </form>
+    <p><a href="index.html">TORNAM A L'INDEX</a></p>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DADES PERSONALS 2</title>
+    <script
+      type="text/javascript"
+      src="../01_FORMULARIS/js/utilitats.js"
+    ></script>
+    <script type="text/javascript">
+      function canviarLocalitats() {
+        var illaValue = parseInt(document.getElementById("illa").value);
+        //console.log(illaValue);
+        var poblacions;
+        switch (illaValue) {
+          case 1: {
+            poblacions =
+              '<option value="Arta">ARTÀ</option><option value="Andratx">ANDRATX</option>';
+            break;
+          }
+          case 2: {
+            poblacions =
+              '<option value="Ciutadella">CIUTADELLA</option><option value="Mao">MAÓ</option>';
+            break;
+          }
+          case 3: {
+            poblacions =
+              '<option value="Josep">SANT JOSEP</option><option value="Joan">SANT JOAN</option>';
+            break;
+          }
+          case 4: {
+            poblacions =
+              '<option value="Francesc">SANT FRANCESC</option><option value="Calo">ES CALÓ</option>';
+            break;
+          }
+        }
+        document.getElementById("pobles").innerHTML = poblacions;
+      }
+
+      function validar() {
+        let cadena = "ERRADES EN FORMULARI:\n\n";
+        let resultat = true;
+        let objecte;
+
+        function errada(error, string) {
+          if (error) {
+            resultat = false;
+            cadena += string;
+            objecte.style.backgroundColor = "#f1b96e";
+          } else {
+            objecte.style.backgroundColor = "#cbe9bf";
+          }
+        }
+
+        //DADES BASIQUES
+        objecte = document.getElementById("nom");
+        if (!validaObligatori(objecte.value)) {
+          errada(true, "- NOM no pot estar buit\n");
+        } else {
+          errada(false);
+        }
+
+        objecte = document.getElementById("llinatges");
+        if (!validaObligatori(objecte.value)) {
+          errada(true, "- LLINATGES no pot estar buit\n");
+        } else {
+          errada(false);
+        }
+
+        objecte = document.getElementById("tel1");
+        if (!validaTelefon(objecte.value)) {
+          errada(true, "- TELEFON 1 ha de contenir un telefon vàlid\n");
+        } else {
+          errada(false);
+        }
+
+        objecte = document.getElementById("tel2");
+        //NOMES COMPROVAM, SI S'HA INTRODUÏT UN VALOR
+        if (validaObligatori(objecte.value)) {
+          if (!validaTelefon(objecte.value)) {
+            errada(true, "- TELEFON 2 ha de contenir un telefon vàlid\n");
+          } else {
+            errada(false);
+          }
+        } else {
+          errada(false);
+        }
+
+        objecte = document.getElementById("dataNeixement");
+        //NOMES COMPROVAM, SI S'HA INTRODUÏT UNA DATA
+        if (validaObligatori(objecte.value)) {
+          if (!validaData(objecte.value)) {
+            errada(
+              true,
+              "- DATA DE NEIXEMENT ha de contenir una data vàlida\n"
+            );
+          } else {
+            errada(false);
+          }
+        } else {
+          errada(false);
+        }
+
+        if (resultat) {
+          cadena = "FORMULARI EMPLENAT CORRECTAMENT";
+        }
+
+        alert(cadena);
+        return resultat;
+      }
+
+      window.onload = function () {
+        document.getElementById("formulari").onsubmit = validar;
+        document.getElementById("formulari").onreset = function () {
+          return confirm("CONFIRMA LA NETEJA DEL FORMULARI?");
+        };
+        document.getElementById("illa").onchange = canviarLocalitats;
+        document.getElementById("nom").setAttribute("value", "GABRIEL");
+        document
+          .getElementById("llinatges")
+          .setAttribute("value", "ALZINA ALOMAR");
+        document.getElementById("nom").focus();
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Dades personals 2</h1>
+    <form action="../01_FORMULARIS/mostruari.html" method="get" id="formulari">
+      <fieldset>
+        <legend>DADES BÀSIQUES</legend>
+
+        <p>
+          <label for="nom">NOM: </label
+          ><input type="text" name="nom" id="nom" />
+        </p>
+
+        <p>
+          <label for="llinatges">LLINATGES: </label
+          ><input type="text" name="llinatges" id="llinatges" />
+        </p>
+
+        <p>
+          <label for="tel1">TELÈFON 1: </label
+          ><input type="text" name="tel1" id="tel1" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>ALTRES DADES</legend>
+
+        <p>
+          <label for="tel2">TELÈFON 2: </label
+          ><input type="text" name="tel2" id="tel2" />
+        </p>
+
+        <p>
+          <label for="email">EMAIL: </label
+          ><input type="text" name="email" id="email" />
+        </p>
+
+        <p>
+          <label for="dataNeixement">DATA NEIXEMENT: </label
+          ><input type="text" name="dataNeixement" id="dataNeixement" />
+        </p>
+
+        <p>
+          SEXE:
+          <input type="radio" name="sexe" id="Home" value="Home" />
+          <label for="Home">Home</label>
+          <input type="radio" name="sexe" id="Dona" value="Dona" />
+          <label for="Dona">Dona</label>
+        </p>
+
+        <p>
+          <label for="illa">ILLA: </label>
+          <select name="illa" id="illa">
+            <option value="1">Mallorca</option>
+            <option value="2">Menorca</option>
+            <option value="3">Eivissa</option>
+            <option value="4">Formentera</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="pobles">LOCALITAT: </label>
+          <select name="pobles" id="pobles">
+            <option value="Arta">ARTÀ</option>
+            <option value="Andratx">ANDRATX</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="carrer">CARRER: </label>
+          <input type="text" name="carrer" id="carrer" />
+        </p>
+
+        <p>
+          <label for="cp">CODI POSTAL: </label
+          ><input type="text" name="cp" id="cp" />
+        </p>
+        <p>
+          <label for="descripcio">DESCRIPCIÓ: </label
+          ><textarea
+            name="descripcio"
+            id="descripcio"
+            cols="20"
+            rows="5"
+          ></textarea>
+        </p>
+      </fieldset>
+      <p>
+        <input type="submit" name="bEnviar" id="bEnviar" value="Enviar" />
+      </p>
+      <p><input type="reset" name="bNeteja" id="bNeteja" value="Netejar" /></p>
+    </form>
+    <p><a href="index.html">Tornar a l'index</a></p>
+  </body>
+</html>

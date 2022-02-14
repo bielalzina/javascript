@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ca" id="arrel">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROVA BUBBLING</title>
+    <style type="text/css">
+      #capa {
+        width: 100px;
+        height: 125px;
+        border: 1px solid black;
+        padding: 1em;
+      }
+      #cos {
+        width: 400px;
+        height: 350px;
+        border: 1px solid black;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function () {
+        var bimbolla = false;
+        document.getElementById("capa").onclick = function (e) {
+          alert(
+            "CAPA\nthis: " +
+              this +
+              "\ne.target: " +
+              e.target +
+              "\ne.currentTarget: " +
+              e.currentTarget
+          );
+        };
+        document.getElementById("hola").onclick = function (e) {
+          alert(
+            "HOLA\nthis: " +
+              this +
+              "\ne.target: " +
+              e.target +
+              "\ne.currentTarget: " +
+              e.currentTarget
+          );
+        };
+
+        //MULTIPLE_2 SOBREESCRIU MULTIPLE_1
+        document.getElementById("multiple").onclick = function (e) {
+          alert(
+            "MULTIPLE_1\nthis: " +
+              this +
+              "\ne.target: " +
+              e.target +
+              "\ne.currentTarget: " +
+              e.currentTarget
+          );
+        };
+        document.getElementById("multiple").onclick = function (e) {
+          //e.stopImmediatePropagation();
+          alert(
+            "MULTIPLE_2\nthis: " +
+              this +
+              "\ne.target: " +
+              e.target +
+              "\ne.currentTarget: " +
+              e.currentTarget
+          );
+        };
+
+        // MULTIPLE_3 i MULTIPLE_4 S'AFEGEIXEN
+        document.getElementById("multiple").addEventListener(
+          "click",
+          function (e) {
+            alert(
+              "MULTIPLE_3\nthis: " +
+                this +
+                "\ne.target: " +
+                e.target +
+                "\ne.currentTarget: " +
+                e.currentTarget
+            );
+          },
+          bimbolla
+        );
+        document.getElementById("multiple").addEventListener(
+          "click",
+          function (e) {
+            alert(
+              "MULTIPLE_4\nthis: " +
+                this +
+                "\ne.target: " +
+                e.target +
+                "\ne.currentTarget: " +
+                e.currentTarget
+            );
+          },
+          bimbolla
+        );
+
+        //PODEM PROPAGAR ELS ESDEVENIMENTS FINS A L'HTML
+
+        document.getElementById("arrel").addEventListener(
+          "click",
+          function (e) {
+            alert(
+              "ARREL\nthis: " +
+                this +
+                "\ne.target: " +
+                e.target +
+                "\ne.currentTarget: " +
+                e.currentTarget
+            );
+          },
+          bimbolla
+        );
+
+        document.getElementById("cos").addEventListener(
+          "click",
+          function (e) {
+            alert(
+              "COS\nthis: " +
+                this +
+                "\ne.target: " +
+                e.target +
+                "\ne.currentTarget: " +
+                e.currentTarget
+            );
+          },
+          bimbolla
+        );
+      };
+    </script>
+  </head>
+  <body id="cos">
+    <h1>PROVA BUBBLING</h1>
+    <div id="capa">
+      <h2 id="hola">HOLA</h2>
+      <h2 id="adeu">ADEU</h2>
+    </div>
+    <h2 id="multiple">MULTIPLE</h2>
+
+    <a href="index.html">TORNAM A L'INDEX</a>
+  </body>
+</html>

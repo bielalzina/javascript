@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBJECTES CONVERTITS A JSON</title>
+    <script src="js/json.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var persona = {
+          nom: "GABRIEL",
+          llinatges: "ALZINA ALOMAR",
+          DNI: "78207737D",
+        };
+
+        var array = [1, 2, 3, 4, 5];
+
+        var matriu = [
+          [0, 1, 2, 3, 4],
+          [5, 6, 7, 8, 9],
+          [10, 11, 12, 13, 14],
+          [15, 16, 17, 18, 19],
+        ];
+
+        var arrayPersones = [
+          { nom: "GABRIEL", llinatges: "ALZINA ALOMAR", DNI: "78207737D" },
+          { nom: "VICTORIA", llinatges: "AMER AMER", DNI: "79207737D" },
+          { nom: "GABRIEL", llinatges: "ALZINA AMER", DNI: "80207737D" },
+          { nom: "IGNASI", llinatges: "AMER ALOMAR", DNI: "81207737D" },
+        ];
+
+        document.getElementById("dPersona").innerHTML = toJSON(persona);
+        document.getElementById("dArray").innerHTML = toJSON(array);
+        document.getElementById("dMatriu").innerHTML = toJSON(matriu);
+        document.getElementById("dArrayObjectes").innerHTML =
+          toJSON(arrayPersones);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>OBJECTES CONVERTITS A JSON</h1>
+    <h2>OBJECTE PERSONA</h2>
+    <div id="dPersona"></div>
+    <h2>ARRAY</h2>
+    <div id="dArray"></div>
+    <h2>MATRIU QUADRADA</h2>
+    <div id="dMatriu"></div>
+    <h2>ARRAY D'OBJECTES PERSONA</h2>
+    <div id="dArrayObjectes"></div>
+  </body>
+</html>

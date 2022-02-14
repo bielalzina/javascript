@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The HISTORY Property</h2>
+
+    <br />
+
+    <p>Numero de URls en HISTORIAL</p>
+
+    <br />
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      let cadena = "";
+      cadena += window.history.length;
+
+      document.getElementById("mostrador").innerHTML =
+        "HISTORIAL LENGTH: " + cadena;
+    </script>
+  </body>
+</html>

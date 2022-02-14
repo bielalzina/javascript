@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The CLEARTIMEOUT() Method</h2>
+    <h3>
+      clearTimeout(identificador) Elimina el temporitzador únic que li passam
+      com a paràmetre.
+    </h3>
+    <p>Tens 5 segons per evitar l'execució del setTimeout</p>
+
+    <div id="mostrador"></div>
+    <br />
+    <button onclick="aturaSaluda()">ATURA</button>
+
+    <script type="text/javascript">
+      const myTimeOut = setTimeout(saluda, 5000);
+      function saluda() {
+        document.getElementById("mostrador").innerHTML =
+          "<h4>MOLTS D'ANYS!!!!</h4>";
+      }
+      function aturaSaluda() {
+        clearTimeout(myTimeOut);
+        console.log("PITJAT");
+      }
+    </script>
+  </body>
+</html>

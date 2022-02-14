@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRAY D'OBJECTES CERATS AMB NOTACIÓ JSON</title>
+
+    <style>
+      table,
+      th,
+      tr,
+      td {
+        border-collapse: collapse;
+        border: black solid thin;
+        padding: 7px;
+      }
+      th {
+        background-color: rgb(156, 144, 144);
+        color: white;
+      }
+    </style>
+
+    <script src="js/json.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var cadena = "";
+        // Recuperam JSON
+        var persones = JSON.parse(tornaCadenaArraysObjectesJSON());
+        //console.log(persones);
+        var titolsColumnes = document.getElementById("tCol");
+        for (var nomColumna in persones[0]) {
+          titolsColumnes.innerHTML +=
+            "<th>" + nomColumna.toLocaleUpperCase() + "</th>";
+        }
+        for (var index in persones) {
+          cadena += "<tr>";
+          for (var nomCamp in persones[index]) {
+            cadena += "<td>" + persones[index][nomCamp] + "</td>";
+          }
+          cadena += "</tr>";
+        }
+        document.getElementById("contingut").innerHTML = cadena;
+        document.getElementById("total").innerHTML =
+          "TOTAL: " + persones.length;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>ARRAY D'OBJECTES CERATS AMB NOTACIÓ JSON</h1>
+    <table>
+      <thead>
+        <tr id="tCol"></tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td id="total" colspan="4"></td>
+        </tr>
+      </tfoot>
+      <tbody id="contingut"></tbody>
+    </table>
+  </body>
+</html>

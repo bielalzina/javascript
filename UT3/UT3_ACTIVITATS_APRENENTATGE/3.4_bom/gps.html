@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../imatges/favicon.ico" />
+    <title>GPS</title>
+    <script type="text/javascript">
+      setInterval(function () {
+        let geo = window.navigator.geolocation;
+        geo.getCurrentPosition(function (pos) {
+          document.getElementById("mostrador").innerHTML =
+            "<p><strong>LONGITUD: </strong>" + pos.coords.longitude + "</p>";
+          document.getElementById("mostrador").innerHTML +=
+            "<p><strong>LATITUD: </strong>" + pos.coords.latitude + "</p>";
+          document.getElementById("mostrador").innerHTML +=
+            "<p><strong>ALTITUD: </strong>" +
+            pos.coords.altitude +
+            " metres</p>";
+          document.getElementById("mostrador").innerHTML +=
+            "<p><strong>PRECISIO: </strong>" +
+            pos.coords.accuracy +
+            " metres</p>";
+          document.getElementById("mostrador").innerHTML +=
+            "<p><strong>VELOCITAT: </strong>" + pos.coords.speed + " m/s</p>";
+          document.getElementById("mostrador").innerHTML +=
+            "<p><strong>RUMB: </strong>" + pos.coords.heading + " º</p>";
+        });
+      }, 5000);
+    </script>
+  </head>
+  <body>
+    <h1>GPS</h1>
+    <div id="mostrador"></div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOSTRUARI HTML 5</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        document.getElementById("range").onchange = function () {
+          document.getElementById("mostrador").innerText = this.value;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>MOSTRUARI HTML 5</h1>
+    <form action="repGet.html" method="GET">
+      <p>
+        <label>METER: </label>
+        <meter value="4" min="1" max="10" name="meter"></meter>
+      </p>
+
+      <p>
+        <label>PROGRESS: </label>
+        <progress value="8" min="1" max="10" name="progress"></progress>
+      </p>
+
+      <p>
+        <label>COLOR: </label>
+        <input type="color" name="color" value="#f5f5dc" />
+      </p>
+
+      <p><label>DATE: </label> <input type="date" name="date" /></p>
+
+      <p>
+        <label>DATETIME-LOCAL: </label>
+        <input type="datetime-local" name="datetime-local" />
+      </p>
+
+      <p><label>EMAIL: </label> <input type="email" name="email" /></p>
+
+      <p><label>MONTH: </label> <input type="month" name="month" /></p>
+
+      <p>
+        <label>NUMBER: </label>
+        <input type="number" min="0" max="10" value="0" name="email" />
+      </p>
+
+      <p><label>URL: </label> <input type="url" name="url" /></p>
+
+      <p><label>WEEK: </label> <input type="week" name="week" /></p>
+
+      <p><label>SEARCH: </label> <input type="search" name="search" /></p>
+
+      <p><label>TEL: </label> <input type="tel" name="tel" /></p>
+
+      <p>
+        <label>RANGE: </label>
+        <input
+          type="range"
+          name="range"
+          id="range"
+          min="0"
+          max="10"
+          value="4"
+        />
+      </p>
+
+      <p id="mostrador"></p>
+
+      <p><button type="submit">ENVIA</button></p>
+    </form>
+
+    <p><a href="index.html">TORNAM A L'INDEX</a></p>
+  </body>
+</html>

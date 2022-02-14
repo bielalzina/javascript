@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The MOVETO() Method</h2>
+    <h3>moveTo(x, y) Mou una finestra: x i y són les coordenades.</h3>
+    <p>Pitja el boto CREAR per obrir una nova finestra</p>
+    <p>
+      Pitja el boto MOURE 1 per per moure-la 250px des de la seva posició actual
+    </p>
+    <p>Pitja el boto MOURE 2 per per moure-la a les coodenades 100, 100</p>
+    <p>Pitja el boto TANCAR per tancar la finestra</p>
+    <br />
+    <button onclick="creaFinestra()">CREAR</button>
+    <button onclick="moureFinestra1()">MOURE 1</button>
+    <button onclick="moureFinestra2()">MOURE 2</button>
+    <button onclick="tancaFinestra()">TANCAR</button>
+    <br />
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      let laMevaFinestra;
+      function creaFinestra() {
+        laMevaFinestra = window.open(
+          "https://www.w3schools.com",
+          "_blank",
+          "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400"
+        );
+      }
+      function tancaFinestra() {
+        laMevaFinestra.close();
+      }
+      function moureFinestra1() {
+        laMevaFinestra.moveBy(250, 250);
+      }
+      function moureFinestra2() {
+        laMevaFinestra.moveTo(100, 100);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The SETTIMEOUT() Method</h2>
+    <h3>
+      setTimeout(funció||codi, milisegons) Crida la funció o executa el codi
+      després de milisegons. Una única vegada. Ho podem anular amb un
+      clearTimeOut. Torna l'identificador de l'interval que haurem de passar a
+      clearTimeOut.
+    </h3>
+    <p>Espera 5 segons</p>
+
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      const myTimeOut = setTimeout(saluda, 5000);
+      function saluda() {
+        document.getElementById("mostrador").innerHTML =
+          "<h4>MOLTS D'ANYS!!!!</h4>";
+      }
+    </script>
+  </body>
+</html>

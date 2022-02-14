@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SET</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        let myMap = new Map();
+        myMap.set(10, "Messi");
+        myMap.set(4, "Ramos");
+        myMap.set(14, "Alonso");
+        myMap.set(46, "Valentino Rossi");
+
+        let cadena = "";
+        cadena += "<p>";
+        for ([clau, valor] of myMap.entries()) {
+          cadena += clau + " -> " + valor + "<br>";
+        }
+
+        cadena += "</p>";
+        document.getElementById("contingut").innerHTML = cadena;
+
+        document.getElementById("clau").innerHTML = 10 + " -> " + myMap.get(10);
+      };
+    </script>
+  </head>
+
+  <body>
+    <h1>MAPES</h1>
+
+    <h2>CONTINGUT DEL MAPA</h2>
+
+    <div id="contingut"></div>
+
+    <h2>RECUPERA EL VALOR</h2>
+
+    <div id="clau"></div>
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

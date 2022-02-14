@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The FOCUS() Method</h2>
+    <h3>focus() Activa el focus a la finestra.</h3>
+    <p>Pitja el boto per obrir una nova finestra i activar el focus en ella</p>
+    <br />
+    <button onclick="creaFinestra()">CREA UNA FINESTRA</button>
+    <br />
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      function creaFinestra() {
+        var laMevaFinestra = "";
+        laMevaFinestra = window.open("", "", "width=200, height=150");
+        laMevaFinestra.focus();
+      }
+    </script>
+  </body>
+</html>

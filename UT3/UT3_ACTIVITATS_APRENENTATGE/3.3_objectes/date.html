@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARRAYS</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+      function calculaAnys(neixement) {
+        avui = new Date();
+        //console.log(avui); => Wed Dec 29 2021 08:47:39 GMT+0100 (hora estándar de Europa central)
+        //console.log(neixement); => Sat Jan 25 1969 00:00:00 GMT+0100 (hora estándar de Europa central)
+        let anys = avui.getFullYear() - neixement.getFullYear();
+        //console.log(anys); => 52
+        // SI AVUI HE FET ANNIVERSARI ANYS ÉS OK
+        // SI AVUI ENCARA NO HE FET ANNIVERSARI HE DE RESTAR 1 A ANYS
+        if (
+          neixement.getMonth() > avui.getMonth() ||
+          (neixement.getMonth() === avui.getMonth() &&
+            neixement.getDate() > avui.getDate())
+        ) {
+          anys--;
+        }
+        return anys;
+      }
+      window.onload = function () {
+        //EXERCICI 1
+        let cadenaInicial = "12/25/2021";
+        let data = new Date(cadenaInicial);
+        let cadena = "";
+        cadena +=
+          "<p><strong>CADENA INICIAL: </strong>" + cadenaInicial + "</p>";
+        cadena +=
+          "<p><strong>DATA FORMATADA: </strong>" +
+          data.toLocaleDateString() +
+          "</p>";
+
+        document.getElementById("exercici1").innerHTML = cadena;
+
+        //EXERCICI 2
+        let any = 1969;
+        let mes = 0;
+        let dia = 25;
+        let hora = 19;
+        let minut = 23;
+        let segon = 45;
+        let data2 = new Date(any, mes, dia, hora, minut, segon);
+        cadena = "";
+        cadena +=
+          "<p><strong>DATA + HORA: </strong>" +
+          data2.toLocaleDateString() +
+          " " +
+          data2.toLocaleTimeString() +
+          "</p>";
+
+        document.getElementById("exercici2").innerHTML = cadena;
+
+        //EXERCICI 3
+        cadena = "";
+        cadena += "<p><strong>DIA: </strong>" + data2.getDate() + "</p>";
+        cadena += "<p><strong>MES: </strong>" + data2.getMonth() + "</p>";
+        cadena += "<p><strong>ANY: </strong>" + data2.getFullYear() + "</p>";
+        cadena += "<p><strong>HORA: </strong>" + data2.getHours() + "</p>";
+        cadena += "<p><strong>MINUT: </strong>" + data2.getMinutes() + "</p>";
+        cadena += "<p><strong>SEGON: </strong>" + data2.getSeconds() + "</p>";
+
+        document.getElementById("exercici3").innerHTML = cadena;
+
+        //EXERCICI 4
+
+        function capSetmana(data) {
+          let dia = data.getDay();
+          //console.log(dia);
+          if (dia === 6 || dia === 7) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        cadena = "";
+        cadena +=
+          "<p><strong>DATA: </strong>" + data2.toLocaleDateString() + " és ";
+        if (capSetmana(data2)) {
+          cadena += "CAP DE SETMANA :)</p>";
+        } else {
+          cadena += "DIA FEINER :(</p>";
+        }
+
+        document.getElementById("exercici4").innerHTML = cadena;
+
+        // EXERCICI 5
+        let data3 = new Date("12/21/2021");
+        //console.log(data3); => Tue Dec 21 2021 00:00:00 GMT+0100 (hora estándar de Europa central)
+        let dia1 = new Date(data3.getFullYear(), 0, 1);
+        //console.log(dia1); => Fri Jan 01 2021 00:00:00 GMT+0100 (hora estándar de Europa central)
+        let dif = data3 - dia1;
+        //console.log(dif); => 30585600000
+
+        cadena = "";
+        cadena +=
+          "<p>Des de dia <strong>" +
+          dia1.toLocaleDateString() +
+          "</strong> fins dia <strong>" +
+          data3.toLocaleDateString() +
+          "</strong> han passat " +
+          Math.ceil(dif / (24 * 60 * 60 * 1000)) +
+          " dies</p>";
+
+        document.getElementById("exercici5").innerHTML = cadena;
+
+        //EXERCICI 6
+        let dataNeixement = new Date("12/30/1969");
+        cadena = "";
+        cadena +=
+          "<p><strong>DATA DE NEIXEMENT: </strong>" +
+          dataNeixement.toLocaleDateString() +
+          "</p>";
+
+        let anys = calculaAnys(dataNeixement);
+
+        cadena += "<p><strong>EDAT: </strong>" + anys + " anys</p>";
+
+        document.getElementById("exercici6").innerHTML = cadena;
+      };
+    </script>
+  </head>
+  <body>
+    <h1></h1>
+
+    <h2>EXERCICI 1</h2>
+    <h3>
+      Crea una pàgina date.html. Dins crea un objecte date a partir d'una
+      cadena.
+    </h3>
+    <div id="exercici1"></div>
+
+    <h2>EXERCICI 2</h2>
+    <h3>
+      Crea un objecte date a partir de les dades any, mes, dia, hores, minuts,
+      segons.
+    </h3>
+    <div id="exercici2"></div>
+
+    <h2>EXERCICI 3</h2>
+    <h3>
+      De l'objecte Date creat a l'exercici anterior, recupera tots els seus
+      elements: any, mes, data, ...
+    </h3>
+    <div id="exercici3"></div>
+
+    <h2>EXERCICI 4</h2>
+    <h3>
+      (Opcional) Escriu una funció que ens digui si una data determinada cau en
+      cap de setmana (dissabte o diumenge).
+    </h3>
+    <div id="exercici4"></div>
+
+    <h2>EXERCICI 5</h2>
+    <h3>
+      (Opcional) Escriu una funció Javascript que ens digui quants dies han
+      passat des de l'inici de l'any fins una data donada del mateix any.
+    </h3>
+    <div id="exercici5"></div>
+
+    <h2>EXERCICI 6</h2>
+    <h3>
+      (Opcional) Programa una funció que torni l'edat d'una persona a partir de
+      la seva data de naixement.
+    </h3>
+    <div id="exercici6"></div>
+
+    <h2>EXERCICI 7</h2>
+    <p></p>
+    <div id="exercici7"></div>
+
+    <h2>EXERCICI 8</h2>
+    <p></p>
+    <div id="exercici8"></div>
+
+    <h2>EXERCICI 9</h2>
+    <p></p>
+    <div id="exercici9"></div>
+
+    <h2>EXERCICI 10</h2>
+    <p></p>
+    <div id="exercici10"></div>
+
+    <h2>EXERCICI 11</h2>
+    <p></p>
+    <div id="exercici11"></div>
+
+    <h2>EXERCICI 12</h2>
+    <p></p>
+    <div id="exercici12"></div>
+
+    <h2>EXERCICI 13</h2>
+    <p></p>
+    <div id="exercici13"></div>
+
+    <h2>EXERCICI 14</h2>
+    <p></p>
+    <div id="exercici14"></div>
+
+    <h2>EXERCICI 15</h2>
+    <p></p>
+    <div id="exercici15"></div>
+
+    <h2>EXERCICI 16</h2>
+    <p></p>
+    <div id="exercici16"></div>
+
+    <h2>EXERCICI 17</h2>
+    <p></p>
+    <div id="exercici17"></div>
+
+    <h2>EXERCICI 18</h2>
+    <p></p>
+    <div id="exercici18"></div>
+
+    <h2>EXERCICI 19</h2>
+    <p></p>
+    <div id="exercici19"></div>
+  </body>
+</html>

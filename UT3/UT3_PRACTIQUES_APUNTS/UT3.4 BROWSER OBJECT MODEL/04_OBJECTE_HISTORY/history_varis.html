@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The HISTORY Object</h1>
+    <h3>
+      Conté les URL's visitades per l'usuari dins de la finestra, no l'històric
+      global. Des de JavaScript no podem saber quines són aquestes URL per
+      motius de privacitat, el que podem fer és navegar per elles. No té gaire
+      sentit anar, per exemple, dues pàgines enrere a l'historial si no saps
+      quina és aquesta pàgina on vas.
+    </h3>
+    <!-- <p><button onclick="go("www.google.es")">GOOGLE</button></p>
+    <p><button onclick="history.go('https://sites.google.com/cifpjoantaix.cat/web/inici')">CIFP JOAN TAIX</button></p>
+    <p><button onclick="history.go("https://hub.empresaula.com/hub/auth/login")">EMPRESAULA</button></p> -->
+    <h2>PROPIETATS</h2>
+    <h3>length, el nombre de URL's dins l'històric.</h3>
+    <div id="mostrador1"></div>
+    <h2>METODES</h2>
+    <h3>
+      back() Carrega la pàgina anterior, com el botó enrere del navegador.
+    </h3>
+    <p><button onclick="history.back()">ANTERIOR</button></p>
+    <h3>
+      forward() Carrega la pàgina següent, com el botó següent del navegador.
+    </h3>
+    <p><button onclick="history.forward()">SEGÜENT</button></p>
+    <h3>
+      go(index || URL) Carrega l'URL que li passam, o la que ocupa la posició
+      index dins l'històric.
+    </h3>
+    <p><button onclick="history.go(-2)">2 PAGINES ENDARRERA</button></p>
+    <h3></h3>
+    <div id="mostrador5"></div>
+    <h3></h3>
+    <div id="mostrador6"></div>
+
+    <script type="text/javascript">
+      document.getElementById("mostrador1").innerHTML =
+        "<h4>" + window.history.length + "</h4>";
+    </script>
+  </body>
+</html>

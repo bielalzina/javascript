@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STRING</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var cadena = "";
+
+        cadena += "<li>";
+        cadena += "Google".link("http://www.google.cat/");
+        cadena += "</li>";
+
+        cadena += "<li>";
+        cadena += "CIFP Pau Casesnoves".link("https://paucasesnovescifp.cat/");
+        cadena += "</li>";
+
+        cadena += "<li>";
+        cadena += "Aula Virtual".link(
+          "https://aulavirtual.paucasesnovescifp.cat/"
+        );
+        cadena += "</li>";
+
+        cadena += "<li>";
+        cadena += "ANAR AL FINAL".link("#final");
+        cadena += "</li>";
+
+        document.getElementById("llista").innerHTML = cadena;
+      };
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      document.write("<h2>" + "ANCORA INICI".anchor("inici") + "</h2>");
+    </script>
+    <h1>ENLLAÇOS CREATS AMB EL WRAPPER</h1>
+
+    <ul id="llista"></ul>
+
+    <script type="text/javascript">
+      for (let i = 0; i < 60; i++) {
+        document.write(
+          "<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. " +
+            "Laborum, voluptatibus.</h3>"
+        );
+      }
+
+      document.write("<h2>" + "ANCORA FINAL".anchor("final") + "</h2>");
+
+      document.write("<h2>" + "TORNAR A DALT".link("#inici") + "</h2>");
+    </script>
+  </body>
+</html>

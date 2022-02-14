@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The LENGTH Property</h2>
+    <h2>TORNA EL NUMERO DE MARCS DE LA FINESTRA</h2>
+
+    <br />
+    <iframe style="width: 100%; height: 100px"></iframe>
+    <iframe style="width: 100%; height: 100px"></iframe>
+    <iframe style="width: 100%; height: 100px"></iframe>
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      let cadena = "";
+      let numFrames = window.length;
+      cadena += "<p>NUMERO DE FRAMES: " + numFrames + "</p>";
+
+      document.getElementById("mostrador").innerHTML = cadena;
+    </script>
+  </body>
+</html>

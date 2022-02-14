@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The SETINTERVAL() Method</h2>
+    <h3>
+      setInterval(funció||codi, milisegons) Crida la funció o executa el codi
+      cada milisegons fins que no s'executi un clearInterval. Torna
+      l'identificador de l'interval que haurem de passar a clearInterval.
+    </h3>
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      setInterval(mostraHola, 1000);
+      function mostraHola() {
+        document.getElementById("mostrador").innerHTML +=
+          "Hola CARACOLA!!!<br>";
+      }
+    </script>
+  </body>
+</html>

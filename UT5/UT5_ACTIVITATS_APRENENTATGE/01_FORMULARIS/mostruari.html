@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOSTRUARI</title>
+  </head>
+  <body>
+    <h1>MOSTRUARI</h1>
+    <form action="repGet.html" method="get" id="formulari">
+      <fieldset>
+        <legend>ELEMENTS</legend>
+
+        <p>
+          <label for="nom">NOM: </label>
+          <input
+            type="text"
+            name="nom"
+            id="nom"
+            title="Nom de pila de la persona"
+          />
+        </p>
+
+        <p>
+          <label for="llinatges">LLINATGES: </label>
+          <input
+            type="text"
+            name="llinatges"
+            id="llinatges"
+            title="Llinatges de la persona"
+          />
+        </p>
+
+        <p>
+          <label for="password">PASSWORD: </label>
+          <input type="password" name="password" id="password" />
+        </p>
+
+        <p>
+          <label for="range">DATE TIME LOCAL: </label>
+          <input
+            type="datetime-local"
+            name="range"
+            id="range"
+            min="10"
+            max="20"
+          />
+        </p>
+
+        <p>
+          RADIO BUTTONS:
+          <input type="radio" name="equip" id="Barsa" value="Barsa" />
+          <label for="Barsa">BARÇA</label>
+          <input type="radio" name="equip" id="Madrid" value="Madrid" />
+          <label for="Madrid">MADRID</label>
+        </p>
+
+        <p>
+          <label for="moto">CHECKBOX: </label>
+          <input type="checkbox" name="moto" id="moto" value="moto" />TENC UNA
+          MOTO
+          <input type="checkbox" name="cotxe" id="cotxe" value="cotxe" />TENC UN
+          COTXE
+        </p>
+
+        <p>
+          <label for="select">SELECT: </label>
+          <select name="marcaCotxe" id="marcaCotxe">
+            <option value="volvo">VOLVO</option>
+            <option value="saab">SAAB</option>
+            <option value="mercedes">MERCEDES</option>
+            <option value="bmw">BMW</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="grup_opcions">SELECT AMB GRUP D'OPCIONS: </label>
+          <select name="pobles" id="pobles">
+            <optgroup label="MALLORCA">
+              <option value="Arta">ARTÀ</option>
+              <option value="Andratx">ANDRATX</option>
+            </optgroup>
+            <optgroup label="MENORCA">
+              <option value="Ciutadella">CIUTADELLA</option>
+              <option value="Mao">MAÓ</option>
+            </optgroup>
+            <optgroup label="EIVISSA">
+              <option value="Josep">SANT JOSEP</option>
+              <option value="Joan">SANT JOAN</option>
+            </optgroup>
+            <optgroup label="FORMENTERA">
+              <option value="Francesc">SANT FRANCESC</option>
+              <option value="Calo">ES CALÓ</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          <textarea name="textArea" id="textArea" cols="30" rows="5">
+Això era i no era,...</textarea
+          >
+        </p>
+
+        <p>
+          <input type="submit" value="ENVIA" id="envia" />
+          <input type="reset" id="reset" name="reset" value="RESET" />
+          <input
+            type="button"
+            value="DESHABILITAR ENVIAR"
+            name="boto"
+            id="boto"
+          />
+        </p>
+      </fieldset>
+    </form>
+    <p><a href="index.html">TORNAM A L'INDEX</a></p>
+  </body>
+</html>

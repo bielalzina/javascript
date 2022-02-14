@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EXERCICI 2</title>
+    <link href="css/estils.css" rel="stylesheet" />
+    <link rel="icon" href="imatges/logo-cifp.ico" type="image/x-icon" />
+    <script src="js/funcions.js"></script>
+    <script type="text/javascript">
+      function mostraInfoArtista(objecteArtista) {
+        var cadena = "";
+        cadena += '<div class="contenidorInfo">';
+        cadena += "<p>NOM: <strong>" + objecteArtista.nom + "</strong></p>";
+        cadena +=
+          "<p>NACIONALITAT: <strong>" +
+          objecteArtista.nacionalitat +
+          "</strong></p>";
+        cadena +=
+          "<p>OBRA/ES: <strong>" +
+          objecteArtista.llistarObres() +
+          "</strong></p>";
+        cadena += "</div>";
+        return cadena;
+      }
+      window.onload = function () {
+        //Cream objectes ARTISTES
+        let artista1 = new Artista("Miquel Barceló", "Espanya");
+        artista1.afegirObra("Mali");
+        artista1.afegirObra("Cala Gran");
+        artista1.afegirObra("Novelo Mojada");
+
+        let artista2 = new Artista("Bansky", "Anglaterra");
+        artista2.afegirObra("Girl with Balloon");
+        artista2.afegirObra("Kissing Coppers");
+        artista2.afegirObra("Kissing Coppers");
+        artista2.afegirObra("Soldier Throwing Flowers");
+        artista2.afegirObra("Brexit");
+        artista2.eliminarObra("Brexit");
+
+        document.getElementById("contingut").innerHTML =
+          mostraInfoArtista(artista1);
+        document.getElementById("contingut").innerHTML +=
+          mostraInfoArtista(artista2);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>EXERCICI 2</h1>
+    <h2>LLISTAT ARTISTES</h2>
+    <div id="contingut"></div>
+
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

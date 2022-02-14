@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTES</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            
+            let notes = [];
+
+            document.getElementById("bAfegir").onclick = function () {
+                //notes.push(document.getElementById("nota").value*1);
+                notes.push(parseFloat(document.getElementById("nota").value));
+                document.getElementById("nota").value="";
+                document.getElementById("resultats").innerHTML="<p>" +
+                    JSON.stringify(notes) + "</p>";
+                document.getElementById("nota").focus();
+            }
+
+            document.getElementById("bCalcular").onclick = function () {
+                
+                let cadena = "";
+                cadena += "<p>" + JSON.stringify(notes) + "</p>";
+                cadena += "<p><strong>MÀXIM: </strong>" + maxim(notes) + "</p>";
+                cadena += "<p><strong>MÍNIM: </strong>" + minim(notes) + "</p>";
+                cadena += "<p><strong>MITJANA: </strong>" + mitjana(notes) + "</p>";
+
+                document.getElementById("resultats").innerHTML = cadena;
+
+                document.getElementById("nota").focus();
+            }
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+    <h1>NOTES</h1>
+    <form>
+        <p><label for="nota">NOTA: </label><input type="text" id="nota"></p>
+        <p><button type="button" id="bAfegir">AFEGIR NOTA</button></p>
+        <p><button type="button" id="bCalcular">CALCULAR MITJANA, MAXIM, MINIM</button></p>
+    </form>
+    <div id="resultats"></div>
+    <p><a href="index.html">TORNAR</a></p>
+    
+</body>
+</html>

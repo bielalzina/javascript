@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../imatges/favicon.ico" />
+    <title>COMPTE ENRERE AMB PARAMETRE</title>
+    <script type="text/javascript">
+      var interval = 10;
+      var cerca = location.search;
+      if (cerca.length > 0) {
+        // location.search = "?name=Gabriel&edat=52&telefon=669668705"
+        //eliminam ?
+        cerca = cerca.substring(1, cerca.length);
+
+        // Convertim cerca en un array separant per &
+        var params = cerca.split("&");
+
+        for (let index = 0; index < params.length; index++) {
+          // parts[0]=nom  parts[1]=valor
+          var parts = params[index].split("=");
+          //Si es correcte
+          if (parts.length == 2) {
+            if (
+              parts[0] == "durada" &&
+              parts[1].length > 0 &&
+              !isNaN(parts[1])
+            ) {
+              //modificam interval
+              interval = parseInt(parts[1]);
+            }
+          }
+        }
+      }
+
+      window.onload = function () {
+        var timer;
+        function resta() {
+          interval--;
+          document.getElementById("temps").innerHTML = "QUEDEN: " + interval;
+          if (interval == 0) {
+            clearInterval(timer);
+          }
+        }
+        timer = setInterval(resta, 1000);
+        document.getElementById("temps").innerHTML = "QUEDEN: " + interval;
+        document.getElementById("mostraInterval").innerHTML =
+          "INTERVAL: " + interval;
+        //document.getElementById("mostraInterval").onclick = function () {
+        //  alert("PAUSA");
+        //};
+      };
+    </script>
+  </head>
+  <body>
+    <h1>COMPTE ENRERE AMB PARAMETRE</h1>
+    <h2 id="temps"></h2>
+    <h3 id="mostraInterval" onclick="alert('PAUSA');"></h3>
+  </body>
+</html>

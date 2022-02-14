@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The NAME Property</h2>
+    <h2>ESTABLEIX O TORNA EL NOM DE LA FINESTRA</h2>
+
+    <br />
+
+    <div id="mostrador"></div>
+
+    <script type="text/javascript">
+      window.name = "LA MEVA FINESTRA";
+      let nomFinestra = window.name;
+      let cadena = "";
+
+      cadena += "<p>NOM DE LA FINESTRA: " + nomFinestra + "</p>";
+
+      document.getElementById("mostrador").innerHTML = cadena;
+    </script>
+  </body>
+</html>

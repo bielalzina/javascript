@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../imatges/favicon.ico" />
+    <title>COMPTE ENRERE</title>
+    <script type="text/javascript">
+      var interval = 10;
+      var timer;
+
+      function resta() {
+        interval--;
+        document.getElementById("temps").innerHTML = "QUEDEN: " + interval;
+
+        if (interval == 0) {
+          clearInterval(timer);
+          location.assign("contingut.html");
+        }
+      }
+
+      window.onload = function () {
+        timer = setInterval(resta, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <h1>COMPTE ENRERE</h1>
+    <h2 id="temps"></h2>
+  </body>
+</html>

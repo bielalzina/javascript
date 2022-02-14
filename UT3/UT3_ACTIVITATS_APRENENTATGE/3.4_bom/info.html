@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INFORMACIÓ DEL BOM</title>
+    <style type="text/css">
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+    </style>
+    <script type="text/javascript">
+      function propietatsWindow() {
+        var explicacio = {};
+        explicacio.name = "El nom de la finestra";
+        explicacio.status = "";
+        explicacio.closed = "";
+        explicacio.length = "";
+        explicacio.innerWidth = "Amplada de l'àrea del document";
+        explicacio.innerHeight = "Alçada de l'àrea del documen";
+        explicacio.scrollX = "";
+        explicacio.pageXOffset = "Desplaçamnt X de la finestra";
+        explicacio.scrollY = "";
+        explicacio.pageYOffset = "Desplaçamnt X de la finestra";
+        explicacio.screenX = "Coordenada X de la finestra dins la pantalla";
+        explicacio.screenY = "Coordenada X de la finestra dins la pantalla";
+        explicacio.outerWidth = "Amplada de la finestra";
+        explicacio.outerHeight = "Alçada de la finestra";
+        explicacio.mozAnimationStartTime = "";
+        explicacio.mozInnerScreenX = "";
+        explicacio.mozInnerScreenY = "";
+        explicacio.devicePixelRatio = "";
+        explicacio.scrollMaxX = "";
+        explicacio.scrollMaxY = "";
+        explicacio.fullScreen = "";
+        explicacio.mozPaintCount = "";
+
+        //var s = "";
+        var propietats = [];
+        for (var membre in window) {
+          if (
+            typeof window[membre] !== "function" &&
+            typeof window[membre] !== "object"
+          ) {
+            // document.getElementById("win").innerHTML += "<tr><td>" + membre + "</td><td>"
+            //         + window[membre] + "</td><td>" + explicacio[membre] + "</td></tr>";
+            //s += "explicacio['" + membre + "']=\"\";\n"
+            propietats.push({
+              nom: membre,
+              valor: window[membre],
+              descripcio: explicacio[membre],
+            });
+          }
+        }
+        montaTaula("win", propietats);
+      }
+
+      function montaTaula(desti, propietats) {
+        var s = "";
+        for (var i = 0; i < propietats.length; i++) {
+          s +=
+            "<tr><td>" +
+            propietats[i].nom +
+            "</td><td>" +
+            propietats[i].valor +
+            "</td><td>" +
+            (propietats[i].descripcio ? propietats[i].descripcio : "") +
+            "</td></tr>";
+        }
+        document.getElementById(desti).innerHTML = s;
+      }
+
+      function propietatsLocation() {
+        //Location
+        var propietats = [];
+        propietats.push({
+          nom: "hash",
+          valor: location.hash,
+          descripcio: "Porció de l'ancora de la URL si n'hi ha",
+        });
+        propietats.push({
+          nom: "host",
+          valor: location.host,
+          descripcio: "El domini i el port",
+        });
+        propietats.push({
+          nom: "hostname",
+          valor: location.hostname,
+          descripcio: "El domini",
+        });
+        propietats.push({
+          nom: "href",
+          valor: location.href,
+          descripcio: "URL completa",
+        });
+        propietats.push({
+          nom: "pathname",
+          valor: location.pathname,
+          descripcio: "Torna la ruta dins al domini",
+        });
+        propietats.push({
+          nom: "port",
+          valor: location.port,
+          descripcio: "El port",
+        });
+        propietats.push({
+          nom: "protocol",
+          valor: location.protocol,
+          descripcio: "El protocol",
+        });
+        propietats.push({
+          nom: "search",
+          valor: location.search,
+          descripcio: "La query String, els paràmetres GET",
+        });
+        montaTaula("loc", propietats);
+      }
+
+      function montaTaulaCapsalera(desti, propietats) {
+        var s = "<tr>";
+        for (var atribut in propietats[0]) {
+          s = s + "<th>" + atribut + "</th>";
+        }
+        s += "</tr>";
+        document.getElementById(desti + "Cap").innerHTML = s;
+        montaTaula(desti, propietats);
+      }
+
+      function propietatsNavigation() {
+        var propietats = [];
+        propietats.push({
+          nom: "appCodeName",
+          valor: navigator.appCodeName,
+          descripcio: "Codi del navegador",
+        });
+        propietats.push({
+          nom: "appName",
+          valor: navigator.appName,
+          descripcio: "Nom del navegador",
+        });
+        propietats.push({
+          nom: "appVersion",
+          valor: navigator.appVersion,
+          descripcio: "Versió del navegador",
+        });
+        propietats.push({
+          nom: "cookieEnabled",
+          valor: navigator.cookieEnabled,
+          descripcio: "Gal·letes habilitades?",
+        });
+        propietats.push({
+          nom: "platform",
+          valor: navigator.platform,
+          descripcio: "Sistema operatiu",
+        });
+        propietats.push({
+          nom: "userAgent",
+          valor: navigator.userAgent,
+          descripcio: "La capçalera que envia al servidor",
+        });
+        montaTaulaCapsalera("nav", propietats);
+      }
+      function propietatsScreen() {
+        var innerHTML =
+          "<tr><td>availWidth</td><td>" +
+          screen.availWidth +
+          "</td><td>Amplada disponible de la pantalla</td></tr>";
+        innerHTML +=
+          "<tr><td>availHeight</td><td>" +
+          screen.availHeight +
+          "</td><td>Alçada disponible de la pantalla</td></tr>";
+        innerHTML +=
+          "<tr><td>colorDepth</td><td>" +
+          screen.colorDepth +
+          "</td><td>Profunditat de colors en bits</td></tr>";
+        innerHTML +=
+          "<tr><td>height</td><td>" +
+          screen.height +
+          "</td><td>Alçada total de la pantalla</td></tr>";
+        innerHTML +=
+          "<tr><td>width</td><td>" +
+          screen.width +
+          "</td><td>Amplada total de la pantalla</td></tr>";
+        innerHTML +=
+          "<tr><td>pixelDepth</td><td>" +
+          screen.pixelDepth +
+          "</td><td>Profunditat de colors en bits</td></tr>";
+        document.getElementById("scr").innerHTML = innerHTML;
+      }
+
+      function propietatsHistory() {
+        document.getElementById("historyLength").innerHTML = history.length;
+      }
+
+      window.onload = function () {
+        propietatsWindow();
+        propietatsLocation();
+        propietatsNavigation();
+        propietatsScreen();
+        propietatsHistory();
+        document.getElementById("boto").onclick = () => {
+          print();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Informació del BOM</h1>
+
+    <h2>Window</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Propietat</th>
+          <th>Valor</th>
+          <th>Descripció</th>
+        </tr>
+      </thead>
+      <tbody id="win"></tbody>
+    </table>
+
+    <h2>Navigator</h2>
+
+    <table>
+      <thead id="navCap"></thead>
+      <tbody id="nav"></tbody>
+    </table>
+
+    <h2>Screen</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Propietat</th>
+          <th>Valor</th>
+          <th>Descripció</th>
+        </tr>
+      </thead>
+      <tbody id="scr"></tbody>
+    </table>
+
+    <h2>History</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Propietat</th>
+          <th>Valor</th>
+          <th>Descripció</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>length</td>
+          <td id="historyLength"></td>
+          <td>Nombre d'URL's guardades dins l'historial</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Location</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Propietat</th>
+          <th>Valor</th>
+          <th>Descripció</th>
+        </tr>
+      </thead>
+      <tbody id="loc"></tbody>
+    </table>
+
+    <p>
+      <button type="button" id="boto">Imprimir</button>
+    </p>
+
+    <p><a href="index.html">Tornar a l'index</a>.</p>
+  </body>
+</html>

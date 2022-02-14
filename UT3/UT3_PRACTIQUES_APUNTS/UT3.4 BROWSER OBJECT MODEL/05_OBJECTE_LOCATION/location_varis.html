@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The LOCATION Object</h1>
+    <h3>
+      Conté informació sobre l'URL actual. Amb els seus mètodes podem recarregar
+      la pàgina o canviar-la.
+    </h3>
+
+    <h2>PROPIETATS</h2>
+    <h3>hash Torna la porció de l'àncora de la URL.</h3>
+    <p>
+      <a id="w3s" href="/js/js_es6.asp#mark_array_from"
+        >/js/js_es6.asp#mark_array_from</a
+      >
+    </p>
+    <p></p>
+    <div id="mostrador1"></div>
+
+    <h3>host Indica el domini i el port</h3>
+    <div id="mostrador2"></div>
+    <h3>hostname Mostra el domini.</h3>
+    <div id="mostrador3"></div>
+    <h3>href Torna l'URL completa</h3>
+    <div id="mostrador4"></div>
+    <h3>pathname Torna la ruta dins el domini.</h3>
+    <div id="mostrador5"></div>
+    <h3>port El port especificat a l'URL si n'hi ha cap</h3>
+    <div id="mostrador6"></div>
+    <h3>protocol El protocol de la URL</h3>
+    <div id="mostrador7"></div>
+    <h3>search La part de la consulta, la que va després de ?</h3>
+    <p>
+      <a id="w4s" href="/js/js_es6.asp?name=gabriel"
+        >/js/js_es6.asp?name=gabriel</a
+      >
+    </p>
+    <div id="mostrador8"></div>
+
+    <h2>METODES</h2>
+    <h3>
+      assign(url) Carrega un nou document. A l'històric es trobaran tots dos, el
+      que hi havia i el nou.
+    </h3>
+    <p><button onclick="carrega()">CARREGA UN NOU DOCUMENT</button></p>
+    <h3>reload() Recarrega la url actual.</h3>
+    <p><button onclick="recarrega()">RECARREGA LA URL ACTUAL</button></p>
+    <h3>
+      replace(url) Substitueix el document actual per el nou, fins i tot a
+      l'historial. Amb back no hi podreu tornar.
+    </h3>
+    <p><button onclick="reemplaça()">REEMPLAÇA</button></p>
+    <h3></h3>
+    <div id="mostrador5"></div>
+    <h3></h3>
+    <div id="mostrador6"></div>
+
+    <script type="text/javascript">
+      console.log(":)");
+      let url = document.getElementById("w3s");
+
+      document.getElementById("mostrador1").innerHTML =
+        "<h4>ANCORA: " + url.hash + "</h4>";
+      document.getElementById("mostrador2").innerHTML =
+        "<h4>HOST: " + location.host + "</h4>";
+      document.getElementById("mostrador3").innerHTML =
+        "<h4>HOSTNAME: " + location.hostname + "</h4>";
+      document.getElementById("mostrador4").innerHTML =
+        "<h4>HREF: " + location.href + "</h4>";
+      document.getElementById("mostrador5").innerHTML =
+        "<h4>PATHNAME: " + location.pathname + "</h4>";
+      document.getElementById("mostrador6").innerHTML =
+        "<h4>PORT: " + location.port + "</h4>";
+      document.getElementById("mostrador7").innerHTML =
+        "<h4>PROTOCOL: " + location.protocol + "</h4>";
+      let url2 = document.getElementById("w4s");
+      document.getElementById("mostrador8").innerHTML =
+        "<h4>SEARCH: " + url2.search + "</h4>";
+      function carrega() {
+        location.assign("https://www.w3schools.com");
+      }
+      function recarrega() {
+        location.reload();
+      }
+      function reemplaça() {
+        location.replace("https://www.w3schools.com");
+      }
+    </script>
+  </body>
+</html>

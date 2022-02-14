@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The Window Object</h1>
+    <h2>The CONFIRM() Method</h2>
+    <h3>
+      confirm(missatge) Mostra una alerta amb el misastge i els botons Acceptar
+      i Cancel·lar.
+    </h3>
+    <p>Pitja el boto per mostrar un missatge de confirmació</p>
+    <br />
+    <button onclick="missatgeConfirmacio()">
+      VEURE MISSATGE DE CONFIRMACIO
+    </button>
+    <br />
+    <div id="mostrador"></div>
+    <br />
+
+    <script type="text/javascript">
+      function missatgeConfirmacio() {
+        let text = "Clica un boto!\nCANCELAR o ACCEPTAR";
+        let cadena = "";
+        if (confirm(text) == true) {
+          cadena += "<h4>Has pitjat en ACCEPTAR</h4>";
+        } else {
+          cadena += "<h4>Has pitjat en CANCELAR</h4>";
+        }
+        document.getElementById("mostrador").innerHTML = cadena;
+      }
+    </script>
+  </body>
+</html>

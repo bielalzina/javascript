@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INSTITUT</title>
+    <script src="js/institut.js"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        let moduls = new Map();
+        moduls.set(
+          "SWDWC",
+          new Modul("Desenvolupament client", "SWDWC", "S2W")
+        );
+        moduls.set(
+          "SWDWS",
+          new Modul("Desenvolupament servidor", "SWDWS", "S2W")
+        );
+        moduls.set("SWDIW", new Modul("Disseny d'interficies", "SWDIW", "S2W"));
+        moduls.set("SWPRO", new Modul("Programació", "SWPRO", "S1W"));
+        moduls.set("SWBBD", new Modul("Bases de dades", "SWBBD", "S1W"));
+        moduls.set(
+          "SWEDE",
+          new Modul("Entorns de desenvolupament", "SWEDE", "S1W")
+        );
+
+        moduls.forEach((actual) => {
+          document.getElementById("llistaModuls").innerHTML +=
+            "<li>" +
+            actual.curs +
+            " - " +
+            actual.codi +
+            " - " +
+            actual.nom +
+            "</li>";
+        });
+
+        let alumne = new Alumne("Gabriel", "Alzina Alomar", "S2W");
+        alumne.afegirModul(moduls.get("SWDWC"));
+        alumne.afegirModul(moduls.get("SWPRO"));
+        alumne.afegirModul(moduls.get("SWDWS"));
+        alumne.eliminarModul(moduls.get("SWDWC"));
+
+        let cadena = "";
+        cadena += "<li><p>";
+        cadena += alumne.nomComplet;
+        cadena += "</p><ol>";
+        for (let actual of alumne.moduls.values()) {
+          cadena +=
+            "<li>" +
+            actual.curs +
+            " - " +
+            actual.codi +
+            " - " +
+            actual.nom +
+            "</li>";
+        }
+        cadena += "</ol></li>";
+
+        document.getElementById("llistaAlumnes").innerHTML += cadena;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>INSTITUT</h1>
+    <h2>LLISTAT MÒDULS</h2>
+    <ul id="llistaModuls"></ul>
+    <h2>LLISTAT ALUMNES</h2>
+    <ul id="llistaAlumnes"></ul>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OBJECTES DEFINITS PER L'USUARI</title>
+    <script type="text/javascript" src="js/aplicacio.js"></script>
+    <script type="text/javascript">
+      function mostraObjecte(objecte) {
+        var cadena = "";
+        cadena += "<p>Nom: <strong>" + objecte.getNom() + "</strong></p>";
+        cadena += "<p>Tipus: <strong>" + objecte.getTipus() + "</strong></p>";
+        cadena +=
+          "<p>Descripció: <strong>" + objecte.getDescripcio() + "</strong></p>";
+        cadena += "<p>Preu: <strong>" + objecte.getPreu() + "</strong></p>";
+        cadena +=
+          "<p>Descarregues: <strong>" +
+          objecte.getDescarregues() +
+          "</strong></p>";
+        return cadena;
+      }
+
+      function inicialitza() {
+        var whatsapp = new Aplicacio(
+          "WhatsApp",
+          "Comunicacions",
+          "Aplicació per enviar missatges gratuitament",
+          0.5
+        );
+        document.getElementById("original1").innerHTML =
+          mostraObjecte(whatsapp);
+
+        var oruxmaps = new Aplicacio(
+          "OruxMaps",
+          "Geolocalització",
+          "Aplicació per enregistrar i seguir rutes",
+          0.0
+        );
+        document.getElementById("original2").innerHTML =
+          mostraObjecte(oruxmaps);
+
+        whatsapp.setDescripcio("Aplicacio SMS PSYCHO KILLER");
+        whatsapp.setPreu(2.25);
+        whatsapp.augmentaDescarregues();
+        whatsapp.augmentaDescarregues();
+        whatsapp.augmentaDescarregues();
+
+        oruxmaps.setDescripcio(
+          oruxmaps.getDescripcio() + " offline: senderisme, mountain bike..."
+        );
+        oruxmaps.setPreu(3.3);
+        oruxmaps.canviaComentari("Collonuda");
+        oruxmaps.augmentaDescarregues();
+        oruxmaps.augmentaDescarregues();
+        oruxmaps.augmentaDescarregues();
+        oruxmaps.augmentaDescarregues();
+        oruxmaps.augmentaDescarregues();
+        oruxmaps.setNom2("OruxMaps II");
+
+        document.getElementById("modificat1").innerHTML =
+          mostraObjecte(whatsapp);
+        document.getElementById("modificat2").innerHTML =
+          mostraObjecte(oruxmaps);
+
+        for (m in oruxmaps) {
+          document.getElementById("modificat2").innerHTML += m + "<br />";
+        }
+
+        Aplicacio.prototype.executaDesbarat = function () {
+          alert("FUNCIÓ executaDesbarat");
+        };
+        oruxmaps.executaDesbarat();
+        whatsapp.executaDesbarat();
+
+        document.getElementById("json").innerHTML = JSON.stringify(whatsapp);
+      }
+      window.onload = inicialitza;
+    </script>
+
+    <style type="text/css">
+      .contenidor {
+        float: left;
+        width: 41%;
+        background: #ddd;
+        margin: 2%;
+        padding: 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>OBJECTES DEFINITS PER L'USUARI</h1>
+    <div class="contenidor">
+      <h2>CREACIÓ D'UN OBJECTE "APLICACIO" 1</h2>
+      <div id="original1"></div>
+    </div>
+    <div class="contenidor">
+      <h2>MODIFICACIÓ DE L'OBJECTE 1</h2>
+      <div id="modificat1"></div>
+    </div>
+    <div class="contenidor">
+      <h2>CREACIÓ D'UN OBJECTE "APLICACIO" 2</h2>
+      <div id="original2"></div>
+    </div>
+    <div class="contenidor">
+      <h2>MODIFICACIÓ DE L'OBJECTE 2</h2>
+      <div id="modificat2"></div>
+    </div>
+    <br /><br />
+    <div class="contenidor">
+      <h2>JSON</h2>
+      <div id="json"></div>
+    </div>
+  </body>
+</html>

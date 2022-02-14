@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>The NAVIGATOR Object</h1>
+    <h2></h2>
+    <h3>appCodeName Torna el codi del navegador.</h3>
+    <div id="mostrador1"></div>
+    <h3>appName Conte el nom.</h3>
+    <div id="mostrador2"></div>
+    <h3>appVersion La versió</h3>
+    <div id="mostrador3"></div>
+    <h3>cookieEnabled Ens diu si les cookies estan habilitades o no</h3>
+    <div id="mostrador4"></div>
+    <h3>
+      geolocation Torna un objecte geolocation que ens permetrà obtenir les
+      coordenades de l’usuari. Demana permís a l’usuari.
+    </h3>
+    <div id="mostrador5"></div>
+    <h3>platform per a quin sistema operatiu ha estat compilat el navegador</h3>
+    <div id="mostrador6"></div>
+    <h3>
+      userAgent Torna aquesta capçalera que el navegador envia al servidor.
+    </h3>
+    <div id="mostrador7"></div>
+
+    <script type="text/javascript">
+      document.getElementById("mostrador1").innerHTML =
+        "<h4>" + navigator.appCodeName + "</h4>";
+      document.getElementById("mostrador2").innerHTML =
+        "<h4>" + navigator.appName + "</h4>";
+      document.getElementById("mostrador3").innerHTML =
+        "<h4>" + navigator.appVersion + "</h4>";
+      document.getElementById("mostrador4").innerHTML =
+        "<h4>" + navigator.cookieEnabled + "</h4>";
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        document.getElementById("mostrador5").innerHTML =
+          "<h4>AQUEST NAVEGADOR NO SOPORTA GEOLOCALITZACIÓ</h4>";
+      }
+
+      function showPosition(position) {
+        document.getElementById("mostrador5").innerHTML =
+          "<h4>LATITUDE: " +
+          position.coords.latitude +
+          "<br>LONGITUDE: " +
+          position.coords.longitude +
+          "</h4>";
+      }
+
+      document.getElementById("mostrador6").innerHTML =
+        "<h4>" + navigator.platform + "</h4>";
+      document.getElementById("mostrador7").innerHTML =
+        "<h4>" + navigator.userAgent + "</h4>";
+    </script>
+  </body>
+</html>

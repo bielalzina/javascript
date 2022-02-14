@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>BOM</title>
+</head>
+<body>
+<h1>Exercicis Browser Object Model</h1>
+<ol>
+    <li>
+        <p>Crea una pàgina&nbsp;<i>info.html</i>. Dins aquesta pàgina crea una secció per a cada objecte que hem vist
+            del BOM que ens mostri<strike>&nbsp;totes les propietats que es pugui veure</strike>&nbsp;tres propietats.
+            Per que quedi una mica “guapo” per a cada secció farem una taula amb tres columnes: la primera tendrà el nom
+            de la propietat, la segona el valor que torna i la tercera una breu explicació.</p>
+        <p><a href="info.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Crea una pàgina&nbsp;<i>tanca.html</i>&nbsp;amb un botó que la tanqui. Inclou un paràgraf amb id per
+            exercicis posteriors.</p>
+        <p><a href="tanca.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Crea una pàgina&nbsp;<i>window.html</i>. Des d'aquesta pàgina obre una finestra emergent amb la
+            pàgina&nbsp;<i>tanca.html</i>&nbsp;i assigna-la a una variable. Perquè obri una finestra independent heu
+            d’especificar qualque paràmetre, per exemple les dimensions de la finestra. Pot ser que el teu navegador la
+            bloquegi.</p>
+        <ol>
+            <li>
+                <p>Inclou un botó que obri la finestra. Guarda la referència que torna open per els exercicis
+                    posteriors.</p>
+            </li>
+            <li>
+                <p>Inclou un botó que canviï les dimensions d'aquesta finestra.</p>
+            </li>
+            <li>
+                <p>Inclou un altre botó que la canviï de posició.</p>
+            </li>
+            <li>
+                <p>Inclou un altre botó que en modifiqui el contingut del paràgraf de&nbsp;<i>tanca.html</i>&nbsp;que
+                    has creat amb identificador.. nom_finestra.document.getElementById....</p>
+            </li>
+            <li>
+                <p>Inclou un altre botó que la tanqui.</p>
+            </li>
+            <li>
+                <p>Aquests botons només han de funcionar si la finestra encara està oberta.</p>
+            </li>
+        </ol>
+        <p><a href="window.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Crea una pàgina&nbsp;<i>splash.html</i>&nbsp;que mostri només una imatge, la que volgueu. Al cap de 10 segons
+            ha de canviar automàticament a la pàgina&nbsp;<i>contingut.html</i>. Creau també aquesta pàgina, l'única
+            condició és que sigui diferent de&nbsp;<i>splash.html</i>.</p>
+        <p><a href="splash.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Crea una pàgina&nbsp;<i>compteEnrere.html</i>&nbsp;que mostri un compte enrere, per exemple de 10 segons. En
+            acabar mostrarà un missatge que avisi a l'usuari que ha acabat, o anirà a la
+            pàgina&nbsp;<i>contingut.</i><i>html</i>&nbsp;automàticament. Per mostrar el temps podeu fer el següent:</p>
+        <ol>
+            <li>
+                <p>Afegir un paràgraf buid amb un identificador, per exemple temps.</p>
+            </li>
+            <li>
+                <p>Canviar el contingut del paràgraf amb&nbsp;<i>document.getElementById("temps").innerHTML= “nou html
+                    que anirà dins el paràgraf”;</i></p>
+            </li>
+        </ol>
+        <p><a href="compteEnrere.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>(Opcional) Copia la pàgina de l’exercici anterior amb el nom&nbsp;<i>compteEnrereParametre.html</i>&nbsp;Ha
+            de rebre un paràmetre a l'url, anomenat&nbsp;<i>durada</i>, amb el nombre de segons i realitzarà el compte
+            enrere d'aquesta durada.</p>
+        <p>Hauria de comprovar que el paràmetre hi és, i que és un número sencer. Si no hi és o no és un sencer farà el
+            compte enrere des des 10</p>
+        <p>compteEnrereParametre.html?durada=12</p>
+        <p>En arribar a zero l’interval s’ha d’aturar i no ha de canviar de pàgina.</p>
+        <p><a href="compteEnrereParametre.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>(Opcional) Inclou a la pàgina&nbsp;<i>gps.html</i>&nbsp;les coordenades de la teva posició, la longitud i la
+            latitud. Utilitza la propietat&nbsp;<i>geolocation</i>&nbsp;de&nbsp;<i>navigator</i>&nbsp;per obtenir aquest
+            objecte.</p>
+        <p>Utilitza el mètode&nbsp;<i>getcurrentPosition()</i>&nbsp;de l’objecte&nbsp;<i>geolocation</i>&nbsp;per
+            obtenir les dades. Aquest mètode espera una funció com a paràmetre. Dins el cos de la funció mostrau les
+            coordenades dins la pàgina.</p>
+        <p>Aquesta funció té un paràmetre on ens arribarà un objecte de tipus&nbsp;<i>Position.</i>&nbsp;A la seva
+            vegada aquest objecte té la propietat<i>&nbsp;coords</i>&nbsp;que&nbsp;<i></i>conté un objecte de tipus&nbsp;<i>Geolocation</i><i>Coordinates.</i>&nbsp;Aquest
+            objecte té una propietat per a la latitud i un altre per la longitud.</p>
+        <p><a href="gps.html">Ves-hi</a></p>
+    </li>
+</ol>
+</body>
+</html>
