@@ -17,7 +17,7 @@ function getCookie(nomCookie) {
     let valor;
     let parts = galletes[i].split("=");
     nom = parts[0];
-    valor = parts[i];
+    valor = parts[1];
     // TRIM DEL NOM
     nom = nom.replace(/^\s+|\s+$/g, "");
     if (nom === nomCookie) {

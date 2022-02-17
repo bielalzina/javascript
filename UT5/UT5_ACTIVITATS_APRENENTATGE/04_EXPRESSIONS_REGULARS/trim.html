@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELIMINAR ESPAIS SOBRANTS</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        document.getElementById("boto").onclick = function () {
+          const cadena = document.getElementById("info").value;
+          document.getElementById("missatge").innerText =
+            "PER MES CLARETAT S'HAN SUBSTITUIT ELS ESPAIS PER - ";
+          document.getElementById("original").innerText = cadena.replaceAll(
+            " ",
+            "-"
+          );
+          const regex = /\s{2,}/g;
+          let resultat = "[" + cadena.replace(regex, " ") + "]";
+          document.getElementById("mostrador").innerText = resultat.replaceAll(
+            " ",
+            "-"
+          );
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>ELIMINAR ESPAIS SOBRANTS</h1>
+    <form>
+      <p>
+        <label for="info">CAMP DE TEXT: </label><input type="text" id="info" />
+      </p>
+      <p><button type="button" id="boto">VALIDAR</button></p>
+    </form>
+    <p id="missatge"></p>
+    <p id="original"></p>
+    <p id="mostrador"></p>
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>

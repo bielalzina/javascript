@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROVA GALETES</title>
+    <script
+      type="text/javascript"
+      src="../01_FORMULARIS/js/utilitats.js"
+    ></script>
+    <script type="text/javascript" src="js/galetes.js"></script>
+    <script type="text/javascript">
+      function valida() {
+        if (
+          validaObligatori(
+            document.getElementById("usuari").value &&
+              validaObligatori(document.getElementById("contrasenya").value)
+          )
+        ) {
+          setCookie("nomUsuari", document.getElementById("usuari").value, 4);
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      window.onload = function () {
+        // PREPARA PÀGINA
+        document.getElementById("formulari").onsubmit = valida;
+        document.getElementById("esborraGaletes").onclick = deleteAllCookies;
+        // RECUPERAM COOKIES
+        var nomUser = getCookie("nomUsuari");
+        console.log(nomUser);
+        if (typeof nomUser != "undefined" && nomUser != null) {
+          document.getElementById("usuari").value = nomUser;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>PROVA GALETES</h1>
+    <form action="../01_FORMULARIS/repGet.html" method="get" id="formulari">
+      <p>
+        <label for="usuari">NOM USUARI: </label
+        ><input type="text" name="usuari" id="usuari" />
+      </p>
+      <p>
+        <label for="password">PASSWORD: </label
+        ><input type="password" name="contrasenya" id="contrasenya" />
+      </p>
+      <p><button type="submit">ENVIAR</button></p>
+      <p><button type="button" id="esborraGaletes">ELIMINA GALETES</button></p>
+    </form>
+    <p><a href="index.html">TORNAR A L'INDEX</a></p>
+  </body>
+</html>
