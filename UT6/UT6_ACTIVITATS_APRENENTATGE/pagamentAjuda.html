@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGAMENT AMB AJUDA</title>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
+    <style type="text/css">
+      label {
+        display: inline-block;
+        width: 7em;
+      }
+
+      .ocult {
+        padding: 0;
+        opacity: 0;
+        height: 0;
+      }
+
+      .visible {
+        padding: 0.5em;
+        opacity: 100;
+        height: auto;
+      }
+
+      .divPagament {
+        background-color: #bbb;
+        transition: opacity 1s, height 1s ease-in;
+      }
+      .ajuda {
+        float: right;
+        width: 25%;
+        background-color: #ddd;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/javascript" src="js/pagament4.js"></script>
+  </head>
+  <body>
+    <h1>PAGAMENT AMB AJUDA</h1>
+    <div class="ajuda" id="divAjuda"><h2>AJUDA</h2></div>
+    <form id="formPrincipal">
+      <fieldset>
+        <legend>DADES PERSONALS</legend>
+        <p>
+          <label>NOM: </label
+          ><input type="text" name="tNom" id="tNom" title="NOM DEL COMPRADOR" />
+        </p>
+        <p>
+          <label>LLINATGES: </label
+          ><input
+            type="text"
+            name="tLlinatges"
+            id="tLlinatges"
+            title="LLINATGES DEL COMPRADOR"
+          />
+        </p>
+        <p>
+          <label>DNI: </label
+          ><input
+            type="text"
+            name="tDNI"
+            id="tDNI"
+            title="DNI o NIE DEL COMPRADOR, SENSE SEPARAR LA LLETRA DELS NUMEROS NI AMB GUIÓ NI AMB ESPAIS EN BLANC"
+          />
+        </p>
+        <p>
+          <label>EMAIL: </label
+          ><input
+            type="text"
+            name="tEmail"
+            id="tEmail"
+            title="ADREÇA DE CORREU ELECTRÒNIC DEL COMPRADOR. ASSEGURI'S QUE ÉS CORRECTA PERQUE EN ELLA REBRÀ INFORMACIÓ SOBRE LA SEVA COMPRA"
+          />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>FORMA DE PAGAMENT</legend>
+        <p>
+          <input type="radio" name="rPagament" id="rbTar" value="tar" />TARGETA
+          DE CRÈDIT
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="rPagament"
+            id="rbTrans"
+            value="trans"
+          />TRANSFERÈNCIA
+        </p>
+        <div id="divTargeta" class="divPagament ocult">
+          <p>
+            <label for="numTargeta">NUMERO TARGETA: </label
+            ><input
+              type="text"
+              name="numTargeta"
+              id="numTargeta"
+              title="NUMERO DE LA TARGETA (20 XIFRES)"
+            />
+          </p>
+          <p>
+            <label for="cadTargeta">CADUCITAT TARGETA: </label
+            ><input
+              type="text"
+              name="cadTargeta"
+              id="cadTargeta"
+              title="CADUCITAT DE LA TARGETA EN FORMAT mm/aa"
+            />
+          </p>
+          <p>
+            <label for="cvsTargeta">CODI VERIFICACIÓ TARGETA: </label
+            ><input
+              type="text"
+              name="cvsTargeta"
+              id="cvsTargeta"
+              title="CODI DE SEGURETAT DE LA TARGETA (3 XIFRES). SOL ESTAR A LA PART POSTERIOR EN L'ESPAI RESERVAT PER A LA SIGNATURA"
+            />
+          </p>
+        </div>
+
+        <div id="divTransferencia" class="divPagament ocult">
+          <p>
+            HEU DE FER UNA TRANSFERÈNCIA AL COMPTE CORRENT
+            <strong>2100-0065-12-1002547894</strong>.
+          </p>
+          <p>
+            UN COP CONFIRMADA LA RECEPCIÓ DE LA TRANSFERÈNCIA, US HO NOTIFICAREM
+            AL CORREU ELECTRÒNIC INDICAT
+          </p>
+        </div>
+      </fieldset>
+      <p><button type="submit">ENVIAR DADES</button></p>
+      <p><button type="reset">NETEJAR FORMULARI</button></p>
+    </form>
+  </body>
+</html>

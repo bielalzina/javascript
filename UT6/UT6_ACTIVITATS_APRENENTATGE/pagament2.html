@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGAMENT 2</title>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
+    <style type="text/css">
+      label {
+        display: inline-block;
+        width: 7em;
+      }
+    </style>
+    <script type="text/javascript" src="js/pagament2.js"></script>
+  </head>
+  <body>
+    <h1>PAGAMENT 2</h1>
+    <form>
+      <fieldset>
+        <legend>DADES PERSONALS</legend>
+        <p><label>NOM: </label><input type="text" name="tNom" id="tNom" /></p>
+        <p>
+          <label>LLINATGES: </label
+          ><input type="text" name="tLlinatges" id="tLlinatges" />
+        </p>
+        <p><label>DNI: </label><input type="text" name="tDNI" id="tDNI" /></p>
+        <p>
+          <label>EMAIL: </label><input type="text" name="tEmail" id="tEmail" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>FORMA DE PAGAMENT</legend>
+        <p>
+          <input type="radio" name="rPagament" id="rbTar" value="tar" />TARGETA
+          DE CRÈDIT
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="rPagament"
+            id="rbTrans"
+            value="trans"
+          />TRANSFERÈNCIA
+        </p>
+        <div id="divTargeta">
+          <p>
+            <label for="numTargeta">NUMERO TARGETA: </label
+            ><input type="text" name="numTargeta" id="numTargeta" />
+          </p>
+          <p>
+            <label for="cadTargeta">CADUCITAT TARGETA: </label
+            ><input type="text" name="cadTargeta" id="cadTargeta" />
+          </p>
+          <p>
+            <label for="cvsTargeta">CODI VERIFICACIÓ TARGETA: </label
+            ><input type="text" name="cvsTargeta" id="cvsTargeta" />
+          </p>
+        </div>
+
+        <div id="divTransferencia">
+          <p>
+            HEU DE FER UNA TRANSFERÈNCIA AL COMPTE CORRENT
+            <strong>2100-0065-12-1002547894</strong>.
+          </p>
+          <p>
+            UN COP CONFIRMADA LA RECEPCIÓ DE LA TRANSFERÈNCIA, US HO NOTIFICAREM
+            AL CORREU ELECTRÒNIC INDICAT
+          </p>
+        </div>
+      </fieldset>
+      <p><button type="submit">ENVIAR DADES</button></p>
+      <p><button type="reset">NETEJAR FORMULARI</button></p>
+    </form>
+  </body>
+</html>

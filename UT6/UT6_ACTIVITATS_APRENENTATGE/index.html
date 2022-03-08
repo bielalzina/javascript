@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Exercicis d'autoaprenentatge: DOM</h2>
+
+    <div id="intro" class="box py-3 generalbox boxaligncenter">
+      <div class="no-overflow">
+        <h1>Instruccions</h1>
+        <ol>
+          <li>
+            <p>
+              Creau un nou projecte SWDWCTema5 que contendrà totes les pàgines i
+              recursos necessaris.
+            </p>
+          </li>
+          <li>
+            <p>
+              En acabar els exercicis comprimiu-lo en un arxiu zip i penjau-lo a
+              l'aula virtual.
+            </p>
+          </li>
+          <li><p>Prohibit generar res amb innerHTML.</p></li>
+        </ol>
+        <h1>Recomanacions</h1>
+        <p>
+          Abans de generar elements des del DOM amb nodes codificau una pàgina
+          HTML amb els elements que necessitau. Quan la tengueu funcionant,
+          utilitzau-la com a exemple per a programar el JavaScript.
+        </p>
+
+        <h1>Exercicis</h1>
+        <ol>
+          <li>
+            <p>
+              Crea la pàgina <i>desitjos.html</i>. Aquesta pàgina ha de tenir:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  un camp de text on l'usuari pugui escriure els seus desitjos.
+                </p>
+              </li>
+              <li>
+                <p>una llista (ul) amb tots els desitjos que ha escrit.</p>
+              </li>
+              <li>
+                <p>
+                  un botó (de tipus button) que afegeixi el desig escrit a la
+                  llista.
+                </p>
+              </li>
+            </ol>
+            <p><a href="desitjos.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              Copia la pàgina de l'exercici anterior amb el nom
+              <i>desitjos2.html</i>. A cada element de la llista has de posar un
+              link o un botó que esborri el desig de la llista.
+            </p>
+            <p><a href="desitjos2.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              Copia la pàgina de l'exercici anterior amb el nom
+              <i>desitjos3.html.</i> Afegeix una llista de desitjos complits que
+              ha d'aparèixer al costat de l'altra. Has de poder passar desitjos
+              d'una llista a l'altra i esborrar-los de qualsevol d'elles.
+            </p>
+            <p><a href="desitjos3.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              Modifica la pàgina anterior de forma que al costat de cada desig
+              hi hagi una imatge d'una creu vermella per eliminar-lo i una
+              fletxa per a canviar-lo de llista.
+            </p>
+            <p><a href="desitjos4.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              Crea una pàgina, <i>pagament.html</i>, amb un formulari que
+              inclogui
+            </p>
+
+            <ul>
+              <li><p>el dni,</p></li>
+              <li><p>el nom,</p></li>
+              <li><p>els llinatges,</p></li>
+              <li><p>un email</p></li>
+              <li>
+                <p>
+                  dos radio buttons per la forma de pagament: targeta o
+                  transferència.
+                </p>
+              </li>
+              <li><p>Un div.</p></li>
+              <li><p>Botons per enviar i netejar el formulari.</p></li>
+              <li>
+                <p>Comportament</p>
+                <ol>
+                  <li>
+                    <p>
+                      Si l'usuari elegeix pagar amb targeta heu de crear al div
+                      camps per el nombre de targeta, la caducitat i el codi de
+                      verificació, amb els corresponents texts que indiquin que
+                      és cada camp.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Si l'usuari elegeix pagar per transferència heu de crear
+                      al div un text que informi a l'usuari del compte corrent
+                      al que ha de fer la transferència i l'avisi que en rebre
+                      la transferència li enviarem un correu amb la confirmació
+                      de la comanda.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Quan l'usuari pitgi un radio button ha d'eliminar del div
+                      tot el que contengui de l'altre opció si és que hi ha res.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      En pitjar el botó reset s'ha d'eliminar del div tot el que
+                      contengui.
+                    </p>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <p><a href="pagament.html">Ves-hi</a></p>
+          <li>
+            <p>
+              Repeteix l'exercici anterior, <i>pagament2.html</i>, però ara els
+              elements corresponents a la forma de pagament es creen des de
+              l'HTML, amb un div per a cada tipus de pagament.
+            </p>
+            <ol>
+              <li><p>Inicialment els dos divs estaran ocults.</p></li>
+              <li>
+                <p>
+                  En pitjar un dels radiobuttons es mostrarà el div
+                  corresponent.
+                </p>
+              </li>
+              <li>
+                <p>
+                  En pitjar un dels radiobuttons si el div corresponent a
+                  l'altre forma de pagament estava visible s'ocultarà.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Feis-ho modificant els atributs dels divs, sense utilitzar
+                  classes CSS.
+                </p>
+              </li>
+            </ol>
+            <p><a href="pagament2.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              (Opcional) Repeteix l'exercici anterior, <i>pagament3.html</i>,
+              utilitzant CSS. Mostrar o ocultar un div es pot fer canviant-li la
+              classe CSS.
+            </p>
+            <p><a href="pagament3.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              (Opcional) Copia l'exercici anterior amb el nom
+              <i>pagamentAjuda.html</i>. Modifica'l de forma que:
+            </p>
+            <ol>
+              <li><p>Tengui un div a la dreta del formulari.</p></li>
+              <li>
+                <p>
+                  Tots els camps del formulari, inclosos els de la forma de
+                  pagament, tenguin l'atribut title amb una breu descripció dels
+                  valors que han de contenir.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Quan l'usuari entri dins un control del formulari, el
+                  contingut de l'atribut title ha d'aparèixer dins el div de la
+                  dreta del formulari.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Quan l'usuari surti del control del formulari, ha de netejar
+                  el div.
+                </p>
+              </li>
+            </ol>
+            <p><a href="pagamentAjuda.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              (Opcional) Recupera la pàgina <i>dadesPersonals2.html</i> com a
+              <i>dadesPersonals4.html</i>.
+            </p>
+            <ol>
+              <li>
+                <p>Modificarem les validacions de la següent manera:</p>
+                <ol>
+                  <li>
+                    <p>
+                      Si encara no ho heu fet heu de tenir un fitxer
+                      <i>js</i> amb funcions per validar camps obligatoris,
+                      dates, nifs i telefons.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Cada funció d'aquestes ha de rebre com a paràmetre el
+                      valor que ha de validar i ha de tornar true o false, sense
+                      mostrar cap alert, ni incloure text a la pàgina.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Validar obligatori ha de tenir en compte que el valor que
+                      rep com a paràmetre estigui definit, no sigui una cadena
+                      buida ni tampoc una cadena només de blancs.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Validar la data ha de tenir en compte que el dia no superi
+                      el màxim del mes. Opcionalment pots tenir en compte els
+                      anys de traspàs.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Validar telefon l'ha de validar sense tenir en compte si
+                      es tracta d'un fixo o d'un mòbil.
+                    </p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>
+                  A cada camp obligatori li assignareu una classe que el
+                  destaqui dels camps opcionals, per exemple que afegeixi un
+                  asterisc vermell al final.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Utilitza aquesta classe per saber quins camps has de validar
+                  com a obligatoris.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Els missatges d'error han de sortir a un div o a un paràgraf
+                  situat a prop del camp que té l'errada. Si no hi ha cap errada
+                  no has de mostrar cap missatge i aquest div o paràgraf no ha
+                  d'ocupar lloc a la pàgina.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Per a cada camp s'han de realitzar totes les validacions
+                  necessàries. Per exemple, si un telèfon és obligatori s'ha de
+                  comprovar que el camp tengui informació i si és així, que
+                  aquesta sigui correcta.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Les validacions es faran quan l'usuari vulgui enviar les
+                  dades. Si tot es correcte s'enviarà el formulari i si no,
+                  evidentment no.
+                </p>
+              </li>
+            </ol>
+            <p><a href="dadesPersonal3.html">Ves-hi</a></p>
+          </li>
+          <li>
+            <p>
+              (Opcional) Copia l'exercici anterior amb el nom
+              <i>dadesPersonal5.html</i>. Modifica'l de manera que quan l'usuari
+              surti d'un camp es validi. Encara que estigui malament l'heu de
+              deixar sortir.
+            </p>
+            <p><a href="dadesPersonal4.html">Ves-hi</a></p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </body>
+</html>

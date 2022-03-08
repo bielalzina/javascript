@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDAES PERSONALS</title>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
+    <style type="text/css">
+      .obligatori::before {
+        content: "*";
+        color: red;
+      }
+    </style>
+    <script type="text/javascript" src="js/utiltats.js"></script>
+    <script type="text/javascript" src="js/dadesPersonals3.js"></script>
+  </head>
+  <body>
+    <h1>MOSTRUARI</h1>
+    <form action="mostruari.html" method="get" id="formulari">
+      <fieldset>
+        <legend>DADES BÀSIQUES</legend>
+        <p>
+          <label for="nom">NOM: </label
+          ><input type="text" name="nom" id="nom" class="obligatori" />
+        </p>
+        <p>
+          <label for="llinatges">LLINATGES: </label
+          ><input
+            type="text"
+            name="llinatges"
+            id="llinatges"
+            class="obligatori"
+          />
+        </p>
+        <p>
+          <label for="tel1">TELÈFON 1 : </label
+          ><input type="text" name="tel1" id="tel1" class="obligatori" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>ALTRES DADES</legend>
+        <p>
+          <label for="tel2">TELEFON 2:</label
+          ><input type="text" name="tel2" id="tel2" />
+        </p>
+        <p>
+          <label for="email">EMAIL: </label
+          ><input type="text" name="email" id="email" />
+        </p>
+        <p>
+          <label for="dataNeixement">DATA DE NEIXEMENT: </label
+          ><input type="text" name="dataNeixement" id="dataNeixement" />
+        </p>
+        <p>
+          SEXE: <input type="radio" name="sexe" id="Home" value="Home" />HOME
+          <input type="radio" name="sexe" id="Dona" value="Dona" />DONA
+        </p>
+        <p>
+          <label for="illa">ILLA: </label>
+          <select name="illa" id="illa">
+            <option value="1">Mallorca</option>
+            <option value="2">Menorca</option>
+            <option value="3">Eivissa</option>
+            <option value="4">Formentera</option>
+          </select>
+        </p>
+        <p>
+          <label for="pobles">LOCALITAT: </label>
+          <select name="pobles" id="pobles">
+            <option value="Arta">Artà</option>
+            <option value="Andratx">Andratx</option>
+          </select>
+        </p>
+        <p>
+          <label for="carrer">ADREÇA: </label
+          ><input type="text" name="carrer" id="carrer" />
+        </p>
+        <p>
+          <label for="cp">CODI POSTAL: </label
+          ><input type="text" name="cp" id="cp" />
+        </p>
+        <p>
+          <textarea
+            name="descripcio"
+            id="descripcio"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </p>
+      </fieldset>
+      <p>
+        <input type="submit" name="bEnviar" id="bEnviar" value="Enviar" />
+        <input type="reset" name="bNeteja" id="bNeteja" value="Netejar" />
+      </p>
+    </form>
+  </body>
+</html>

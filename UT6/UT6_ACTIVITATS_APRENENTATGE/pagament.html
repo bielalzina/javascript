@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGAMENT</title>
+    <script type="text/javascript" src="js/pagament.js"></script>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico" />
+    <style type="text/css">
+      label {
+        display: inline-block;
+        width: 7em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PAGAMENT</h1>
+    <form>
+      <fieldset>
+        <legend>DADES PERSONALS</legend>
+        <p><label>NOM: </label><input type="text" name="tNom" id="tNom" /></p>
+        <p>
+          <label>LLINATGES: </label
+          ><input type="text" name="tLlinatges" id="tLlinatges" />
+        </p>
+        <p><label>DNI: </label><input type="text" name="tDNI" id="tDNI" /></p>
+        <p>
+          <label>EMAIL: </label><input type="text" name="tEmail" id="tEmail" />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>FORMA DE PAGAMENT</legend>
+        <p>
+          <input type="radio" name="rPagament" id="rbTar" value="tar" />TARGETA
+          DE CRÈDIT
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="rPagament"
+            id="rbTrans"
+            value="trans"
+          />TRANSFERÈNCIA
+        </p>
+        <div id="dPagament"></div>
+      </fieldset>
+      <p><button type="submit">ENVIAR DADES</button></p>
+      <p><button type="reset">NETEJAR FORMULARI</button></p>
+    </form>
+  </body>
+</html>
