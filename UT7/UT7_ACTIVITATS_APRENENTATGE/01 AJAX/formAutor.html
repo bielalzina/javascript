@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FORMULARI AUTOR</title>
+        <script src="js/formAutor.js"></script>
+    </head>
+    <body>
+        <h1>FORMULARI AUTOR</h1>
+        <form
+            id="formAutor"
+            action="http://52.178.39.51:8080/autors"
+            method="post"
+        >
+            <p>
+                <label>IDENTIFICADOR: </label
+                ><input type="numbre" name="idAut" id="idAut" readonly />
+            </p>
+            <p>
+                <label>LLINATGES, NOM: </label
+                ><input type="text" name="nomAut" id="nomAut" />
+            </p>
+            <p>
+                <label>DATA NEIXEMENT: </label
+                ><input type="date" name="dnaixAut" id="dnaixAut" />
+            </p>
+            <p>
+                <div id="llistaNacionalitats"></div>
+                <label>NACIONALITAT: </label
+                ><select name="nacionalitat" id="nacionalitat">
+                    <option value="">Tria una nacionalitat</option>
+                </select>
+            </p>
+            <p><button type="submit">ENVIA</button></p>
+            <p><button type="reset">NETEJA EL FORMULARI</button></p>
+        </form>
+        <p><a href="index.html">TORNA A L'INDEX</a></p>
+    </body>
+</html>
