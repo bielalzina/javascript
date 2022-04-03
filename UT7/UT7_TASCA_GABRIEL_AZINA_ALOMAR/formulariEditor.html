@@ -18,23 +18,88 @@
         <title>PRÀCTICA UT-7</title>
         <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/scriptFormulariEditor.js"></script>
+        <script src="js/funcions.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-info">
             <div class="container">
-                <h1 class="display-3">EXERCICI 2: Seleccionar Editor</h1>
+                <h1 class="display-3">EXERCICI 2: ALTA/MODIFICACIÓ EDITOR</h1>
             </div>
         </nav>
 
         <div class="container">
-            <div class="row"></div>
-        </div>
+            <form
+                id="formEditor"
+                action="http://52.178.39.51:8080/editors"
+                method="post"
+            >
+                <div class="mb-3">
+                    <label for="idEdit" class="form-label">CODI</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="idEdit"
+                        placeholder="L'aplicació s'encarrega d'assignar un codi a l'editor"
+                        +
+                        disabled
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="nomEdit" class="form-label">NOM EDITOR</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="nomEdit"
+                        placeholder="Indica el nom de l'editor"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="adrEdit" class="form-label">ADREÇA</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="adrEdit"
+                        placeholder="Carrer, plaça, avinguda... numero, bloc, escala, pis..."
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="cpEdit" class="form-label">CP</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="cpEdit"
+                        placeholder="Codi postal"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="pobEdit" class="form-label">POBLACIÓ</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="pobEdit"
+                        placeholder="Indica la població"
+                    />
+                </div>
 
-        '<a href="index.html"
-            ><button type="button" class="btn btn-info">
-                TORNA A L'INDEX
-            </button></a
-        >
+                <button type="submit" class="btn btn-primary">
+                    DESA EDITOR
+                </button>
+            </form>
+        </div>
+        <hr class="bg-danger border-2 border-top border-danger" />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-auto">
+                    <a href="index.html">
+                        <button type="button" class="btn btn-info">
+                            TORNA A L'INDEX
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <!-- Bootstrap Bundle with Popper -->
         <script
