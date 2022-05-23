@@ -1,295 +1,356 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-			crossorigin="anonymous"
-		/>
-		<!-- <link rel="stylesheet" href="../css/estil.css" /> -->
-		<link rel="icon" type="image/ico" href="../imatges/favicon.ico" />
-		<title>FUNCIONS</title>
-		
-		<script type="text/javascript" src="../js/utilitats.js"></script>
-		
-		
-		<script type="text/javascript">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="../css/estil.css" /> -->
+    <link rel="icon" type="image/ico" href="../imatges/favicon.ico" />
+    <title>FUNCIONS</title>
 
-		window.onload = function(){
+    <script type="text/javascript" src="../js/utilitats.js"></script>
 
-			//Exercici 2
+    <script type="text/javascript">
+      window.onload = function () {
+        //Exercici 2
 
-			var operacio=suma;
-			var numero1 = llegeixSencer("Introdueix el primer sumand");
-			var numero2 = llegeixSencer("Introdueix el segon sumand");
-			var missatgeExercici2 = "<p>Primer sumand: " + numero1 + "<p>" + 
-									"<p>Segon sumand: " + numero2 + "<p>" + 
-									"<p>Suma = " + operacio(numero1,numero2) + "<p>";
-			document.getElementById("Exercici2").innerHTML = missatgeExercici2;
+        var operacio = suma;
+        var numero1 = llegeixSencer("Introdueix el primer sumand");
+        var numero2 = llegeixSencer("Introdueix el segon sumand");
+        var missatgeExercici2 =
+          "<p>Primer sumand: " +
+          numero1 +
+          "<p>" +
+          "<p>Segon sumand: " +
+          numero2 +
+          "<p>" +
+          "<p>Suma = " +
+          operacio(numero1, numero2) +
+          "<p>";
+        document.getElementById("Exercici2").innerHTML = missatgeExercici2;
 
-			// Exercici 3
-			
-			var restaAnonima = function (a,b){
-				return a-b;
-			}
-			var missatgeExercici3 = "<p>Resta = " + restaAnonima(numero1,numero2) + "</p>";
-			document.getElementById("Exercici3").innerHTML = missatgeExercici3;
+        // Exercici 3
 
-			//Exercici 4
+        var restaAnonima = function (a, b) {
+          return a - b;
+        };
+        var missatgeExercici3 =
+          "<p>Resta = " + restaAnonima(numero1, numero2) + "</p>";
+        document.getElementById("Exercici3").innerHTML = missatgeExercici3;
 
-			function calcula (a,b,operacio){
-				alert("OPERACIÓ PARAMETRE: "+ operacio.name);
-				return operacio(a,b);
-			}
+        //Exercici 4
 
-			var missatgeExercici4 = "<p>Calcula: " + calcula(numero1,numero2,resta) + "</p>";
-			document.getElementById("Exercici4").innerHTML = missatgeExercici4;
+        function calcula(a, b, operacio) {
+          alert("OPERACIÓ PARAMETRE: " + operacio.name);
+          return operacio(a, b);
+        }
 
-			//Exercici 5
+        var missatgeExercici4 =
+          "<p>Calcula: " + calcula(numero1, numero2, resta) + "</p>";
+        document.getElementById("Exercici4").innerHTML = missatgeExercici4;
 
-			function grossa (a,b){
-				var cadena = "Resultat: ";
+        //Exercici 5
 
-				function petita (valor){
-					alert (cadena + valor);
-				}
+        function grossa(a, b) {
+          var cadena = "Resultat: ";
 
-				petita (a*b);
-			}
+          function petita(valor) {
+            alert(cadena + valor);
+          }
 
-			grossa(numero1,numero2);
+          petita(a * b);
+        }
 
-			// Exercici 6
+        grossa(numero1, numero2);
 
-			function info(a,b,c,d) {
-				document.getElementById("Exercici6").innerHTML += "<h3>Arguments</h3>";
-				document.getElementById("Exercici6").innerHTML += "<p><bold>Longitud: </bold>" + arguments.length + "</p>";
+        // Exercici 6
 
-				let s = "";
-				for (let i = 0; i < arguments.length; i++) {
-					s = s + arguments[i] + "  ";
-				}
+        function info(a, b, c, d) {
+          document.getElementById("Exercici6").innerHTML +=
+            "<h3>Arguments</h3>";
+          document.getElementById("Exercici6").innerHTML +=
+            "<p><bold>Longitud: </bold>" + arguments.length + "</p>";
 
-				document.getElementById("Exercici6").innerHTML += "<p><bold>Vaors rebuts: </bold>" + s + "</p>";
+          let s = "";
+          for (let i = 0; i < arguments.length; i++) {
+            s = s + arguments[i] + "  ";
+          }
 
-				//document.getElementById("Exercici6").innerHTML += "<p><bold>Callee: </bold>" + arguments.callee + "</p>";
-				//document.getElementById("Exercici6").innerHTML += "<p><bold>Callee.caller: </bold>" + arguments.callee.caller + "</p>";
-				
-				document.getElementById("Exercici6").innerHTML += "<h3>Funció</h3>";
-				document.getElementById("Exercici6").innerHTML += "<p><bold>Nom: </bold>" + info.name + "</p>";
-				document.getElementById("Exercici6").innerHTML += "<p><bold>Paràmetres esperats: </bold>" + info.length + "</p>";
+          document.getElementById("Exercici6").innerHTML +=
+            "<p><bold>Vaors rebuts: </bold>" + s + "</p>";
 
-			}
+          //document.getElementById("Exercici6").innerHTML += "<p><bold>Callee: </bold>" + arguments.callee + "</p>";
+          //document.getElementById("Exercici6").innerHTML += "<p><bold>Callee.caller: </bold>" + arguments.callee.caller + "</p>";
 
-			info(3,4,5,6);
+          document.getElementById("Exercici6").innerHTML += "<h3>Funció</h3>";
+          document.getElementById("Exercici6").innerHTML +=
+            "<p><bold>Nom: </bold>" + info.name + "</p>";
+          document.getElementById("Exercici6").innerHTML +=
+            "<p><bold>Paràmetres esperats: </bold>" + info.length + "</p>";
+        }
 
-			// Exercici 7
-			
-			function mostra() {
-				alert("Hola!");
-			}
+        info(3, 4, 5, 6);
 
-			document.getElementById("boto").onclick = mostra;
+        // Exercici 7
 
+        function mostra() {
+          alert("Hola!");
+        }
 
-			// Exercici 8
+        document.getElementById("boto").onclick = mostra;
 
-			function mostraDades(dada) {
-				alert("Dades: " + dada);
-			}
+        // Exercici 8
 
-			document.getElementById("botoAmbParametre").onclick = function () {
-				mostraDades("GABRIEL");
-			}		
-			
-			// Exercici 9
+        function mostraDades(dada) {
+          alert("Dades: " + dada);
+        }
 
-			
-			for (var index = 1; index <= 10; index++) {
-				document.getElementById("Exercici9").innerHTML += '<p><button type="button" class="btn btn-primary" id="boto'+ index +'">Botó' + index + '</button></p>';
-				
-			}
+        document.getElementById("botoAmbParametre").onclick = function () {
+          mostraDades("GABRIEL");
+        };
 
-			// For amb VAR
-			
-			// for (var i = 1; i <= 10; i++) {
-			// 	document.getElementById("boto"+i).onclick = function () {
-			//  		alert ("Has clicat en el botó: "+i);
-			// 	}
-			// }
-			
-			// FOR AMB LET
-			
-			for (let i = 1; i <= 10; i++) {
-				document.getElementById("boto"+i).onclick = function () {
-					alert ("Has clicat en el botó: "+i);
-				}
-			}
+        // Exercici 9
 
+        for (var index = 1; index <= 10; index++) {
+          document.getElementById("Exercici9").innerHTML +=
+            '<p><button type="button" class="btn btn-primary" id="boto' +
+            index +
+            '">Botó' +
+            index +
+            "</button></p>";
+        }
 
-			
+        // For amb VAR
 
-			// Exercici 10
+        // for (var i = 1; i <= 10; i++) {
+        // 	document.getElementById("boto"+i).onclick = function () {
+        //  		alert ("Has clicat en el botó: "+i);
+        // 	}
+        // }
 
-			for (var index2 = 1; index2 <= 10; index2++) {
-				document.getElementById("Exercici10").innerHTML += '<p><button type="button" class="btn btn-primary" id="boton'+ index2 +'">Botó' + index2 + '</button></p>';
-				
-			}
+        // FOR AMB LET
 
-			for (let j = 1; j <= 10; j++) {
-				document.getElementById("boton"+j).onclick = () => {
-					alert ("Has clicat en el botó: "+j);
-				}
-			}
+        for (var i = 1; i <= 10; i++) {
+          document.getElementById("boto" + i).onclick = function () {
+            alert("Has clicat en el botó: " + i);
+          };
+        }
 
-			// Exercici 11
+        // Exercici 10
 
-			document.getElementById("Exercici11").innerHTML += "<p>Valors: 1,2,3,4,5,6,7,8,9</p>";
-			document.getElementById("Exercici11").innerHTML += "<p>Suma: "+ sumaRest(1,2,3,4,5,6,7,8,9) + "</p>";
+        for (var index2 = 1; index2 <= 10; index2++) {
+          document.getElementById("Exercici10").innerHTML +=
+            '<p><button type="button" class="btn btn-primary" id="boton' +
+            index2 +
+            '">Botó' +
+            index2 +
+            "</button></p>";
+        }
 
-			
+        for (let j = 1; j <= 10; j++) {
+          document.getElementById("boton" + j).onclick = () => {
+            alert("Has clicat en el botó: " + j);
+          };
+        }
 
-		};	
+        // Exercici 11
 
-		</script>
-	</head>
-	<body>
-		
-		
-				
-		<nav class="navbar navbar-dark bg-primary">
-			<div class="container py-2">
-				<h1>FUNCIONS</h1>
-			</div>
-		</nav>
-		
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Assigna la funció suma a una variable operació. Utilitza aquesta variable per a calcular la suma de dos números.</h4>
-				</div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici2" ></div>
-			</div>
-		</div>
+        document.getElementById("Exercici11").innerHTML +=
+          "<p>Valors: 1,2,3,4,5,6,7,8,9</p>";
+        document.getElementById("Exercici11").innerHTML +=
+          "<p>Suma: " + sumaRest(1, 2, 3, 4, 5, 6, 7, 8, 9) + "</p>";
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container py-2">
+        <h1>FUNCIONS</h1>
+      </div>
+    </nav>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea una funció anònima assignada a una variable que rebi com a mínim dos paràmetres i comprova que funciona.</h4>
-				</div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici3" ></div>
-			</div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Assigna la funció suma a una variable operació. Utilitza aquesta
+            variable per a calcular la suma de dos números.
+          </h4>
+        </div>
+        <div class="alert alert-success my-3" role="alert" id="Exercici2"></div>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea una funció calcula que rebi tres paràmetres, els dos primers seran números i el tercer una funció. Dins el cos de la funció s'executarà la funció passada com a paràmetre amb les altres dades. Prova si funciona.</h4>
-				</div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici4" ></div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea una funció amb una funció interna com les del pdf i provau-ho.</h4>
-				</div>
-				
-			</div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea una funció anònima assignada a una variable que rebi com a
+            mínim dos paràmetres i comprova que funciona.
+          </h4>
+        </div>
+        <div class="alert alert-success my-3" role="alert" id="Exercici3"></div>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea una funció amb quatre paràmetres. Dins el cos de la funció utilitza l'objecte arguments i les propietats de la funció per a mostrar tota la informació possible.</h4>
-				</div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici6" ></div>
-			</div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea una funció calcula que rebi tres paràmetres, els dos primers
+            seran números i el tercer una funció. Dins el cos de la funció
+            s'executarà la funció passada com a paràmetre amb les altres dades.
+            Prova si funciona.
+          </h4>
+        </div>
+        <div class="alert alert-success my-3" role="alert" id="Exercici4"></div>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea una funció anomenada mostra que en executar-se mostri un alert. Assigna aquesta funció a l'esdeveniment onclick d'un botó dins el windows onload.</h4>
-				</div>
-				<div class="my-3">
-					<button type="button" class="btn btn-primary" id="boto">Boto saluda</button>
-				</div>
-			</div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea una funció amb una funció interna com les del pdf i provau-ho.
+          </h4>
+        </div>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea una funció anomenada mostraDades amb un paràmetre. En executar-se ha de mostrar aquest paràmetre dins d'un alert. Assigna aquesta funció a l'esdeveniment onclick d'un botó dins del windows.onload</h4>
-				</div>
-				<div class="my-3">
-					<button type="button" class="btn btn-primary" id="botoAmbParametre">Boto amb parametre</button>
-				</div>
-			</div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea una funció amb quatre paràmetres. Dins el cos de la funció
+            utilitza l'objecte arguments i les propietats de la funció per a
+            mostrar tota la informació possible.
+          </h4>
+        </div>
+        <div class="alert alert-success my-3" role="alert" id="Exercici6"></div>
+      </div>
+    </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea una funció anomenada mostra que en executar-se mostri un alert.
+            Assigna aquesta funció a l'esdeveniment onclick d'un botó dins el
+            windows onload.
+          </h4>
+        </div>
+        <div class="my-3">
+          <button type="button" class="btn btn-primary" id="boto">
+            Boto saluda
+          </button>
+        </div>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea un formulari amb 10 botons amb identificadors del tipus boto0, boto1, ... Utilitza un for dins del onload per inicialitzar-los i que mostri un alert amb el nombre de l'identificador.
-						 
-						<ol class="list-group list-group-numbered alert alert-secondary my-1">
-							<li class="list-group-item alert alert-secondary">Utilitza var per definir la variable del for. Cada botó mostra el valor que toca? Perquè?</li>
-							<li class="list-group-item alert alert-secondary">Utilitza ara let. Que passa? Perquè?</li>
-							<li class="list-group-item alert alert-secondary">Escriu les respostes dins l’HTML de la pàgina.</li>
-						  </ol>					
-						</h4>
-				</div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici9" ></div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici9b" >
-					<h3>FOR AMB VAR</h3>
-					<p>Amb <em><bold>var</bold></em> la variable que utílitzam 
-						com a índex del for té com a àmbit de referència la funció, 
-						en aquest cas el window.onload. Per tant, és la mateixa 
-						variable per a tots els botons i tots mostren el mateix valor.</p>
-					<h3>FOR AMB LET</h3>
-					<p>Amb <em><bold>let</bold></em> la variable que utílitzam 
-						com a índex del for té com a àmbit de referència el bloc del for. 
-						És com si a cada iteració del for tenguéssim una variable diferent. 
-						Per tant, cada botó té la seva 'pròpia variable' i mostra el valor adeqüat.</p>
-				</div>
-			</div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea una funció anomenada mostraDades amb un paràmetre. En
+            executar-se ha de mostrar aquest paràmetre dins d'un alert. Assigna
+            aquesta funció a l'esdeveniment onclick d'un botó dins del
+            windows.onload
+          </h4>
+        </div>
+        <div class="my-3">
+          <button type="button" class="btn btn-primary" id="botoAmbParametre">
+            Boto amb parametre
+          </button>
+        </div>
+      </div>
+    </div>
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Repeteix l'exercici anterior amb let, però ara utilitza arrow functions per assignar el codi als esdeveniments.</h4>
-				</div>
-			</div>
-			<div class="alert alert-success my-3" role="alert" id="Exercici10" ></div>
-		</div>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea un formulari amb 10 botons amb identificadors del tipus boto0,
+            boto1, ... Utilitza un for dins del onload per inicialitzar-los i
+            que mostri un alert amb el nombre de l'identificador.
 
-		<div class="container">
-			<div class="row">
-				<div class="alert alert-secondary my-3" role="alert">
-					<h4>Crea dins utilitats.js una funció que pugui rebre qualsevol quantitat d'arguments amb un paràmetre Rest i torni la suma de tots aquests arguments.</h4>
-				</div>
-				<div class="alert alert-success my-3" role="alert" id="Exercici11" ></div>
-			</div>
-		</div>
+            <ol
+              class="list-group list-group-numbered alert alert-secondary my-1"
+            >
+              <li class="list-group-item alert alert-secondary">
+                Utilitza var per definir la variable del for. Cada botó mostra
+                el valor que toca? Perquè?
+              </li>
+              <li class="list-group-item alert alert-secondary">
+                Utilitza ara let. Que passa? Perquè?
+              </li>
+              <li class="list-group-item alert alert-secondary">
+                Escriu les respostes dins l’HTML de la pàgina.
+              </li>
+            </ol>
+          </h4>
+        </div>
+        <div class="alert alert-success my-3" role="alert" id="Exercici9"></div>
+        <div class="alert alert-success my-3" role="alert" id="Exercici9b">
+          <h3>FOR AMB VAR</h3>
+          <p>
+            Amb <em><bold>var</bold></em> la variable que utílitzam com a índex
+            del for té com a àmbit de referència la funció, en aquest cas el
+            window.onload. Per tant, és la mateixa variable per a tots els
+            botons i tots mostren el mateix valor.
+          </p>
+          <h3>FOR AMB LET</h3>
+          <p>
+            Amb <em><bold>let</bold></em> la variable que utílitzam com a índex
+            del for té com a àmbit de referència el bloc del for. És com si a
+            cada iteració del for tenguéssim una variable diferent. Per tant,
+            cada botó té la seva 'pròpia variable' i mostra el valor adeqüat.
+          </p>
+        </div>
+      </div>
+    </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Repeteix l'exercici anterior amb let, però ara utilitza arrow
+            functions per assignar el codi als esdeveniments.
+          </h4>
+        </div>
+      </div>
+      <div class="alert alert-success my-3" role="alert" id="Exercici10"></div>
+    </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-secondary my-3" role="alert">
+          <h4>
+            Crea dins utilitats.js una funció que pugui rebre qualsevol
+            quantitat d'arguments amb un paràmetre Rest i torni la suma de tots
+            aquests arguments.
+          </h4>
+        </div>
+        <div
+          class="alert alert-success my-3"
+          role="alert"
+          id="Exercici11"
+        ></div>
+      </div>
+    </div>
 
-		<!-- Bootstrap Bundle with Popper -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-			crossorigin="anonymous"
-		></script>
-	</body>
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
