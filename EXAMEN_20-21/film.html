@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alta pel·lícula</title>
+    <script src="exercicis/film.js"></script>
+    <link rel="stylesheet" href="css/sakila.css">
+</head>
+<body>
+<h1>Alta pel·lícula</h1>
+<div class="container">
+    <div class="panell">
+        <form method="post" action="#" id="formulari">
+            <p><label class="required" for="title">Títol: </label><input type="text" name="title" id="title"></p>
+            <div id="eTitle"></div>
+            <p><label for="releaseYear">Any: </label><input type="text" name="releaseYear" id="releaseYear"></p>
+            <div id="eReleaseYear"></div>
+            <p><label class="required" for="length">Durada: </label><input type="text" name="length" id="length"></p>
+            <div id="eLength"></div>
+            <p><label class="required" for="rating">Qualificació: </label><input type="text" name=rating" id="rating">
+            </p>
+            <div id="eRating"></div>
+            <p><label for="description">Descripció: </label><textarea name=="description" id="description"></textarea>
+            </p>
+            <p><label for="specialFeatures">Característiques especials: </label><textarea name="specialFeatures"
+                                                                                          id="specialFeatures"></textarea>
+            </p>
+            <p>
+                <button type="submit" id="bEnviar">Afegir</button>
+            </p>
+        </form>
+    </div>
+    <div class="panell">
+        <p>Panell</p>
+    </div>
+</div>
+<p class="nota">Els camps marcats <span class="required">amb</span> són obligatoris.</p>
+<p><a href="index.html">Tornar a l'índex</a></p>
+</body>
+</html>
